@@ -3,56 +3,95 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Run!-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="SetupRunViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Time to Run" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="29" y="140" width="158" height="25.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Time to Run" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="43" y="115" width="104" height="26"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="5U4-FU-hTa"/>
+                                    <constraint firstAttribute="height" constant="26" id="CTB-sh-Vaf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Distance to Run" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lz1-hr-zZD">
-                                <rect key="frame" x="29" y="310" width="214" height="35"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Distance to Run" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lz1-hr-zZD">
+                                <rect key="frame" x="24" y="384" width="142" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Fqd-sk-q2q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGr-qU-UoE">
-                                <rect key="frame" x="259" y="75" width="243" height="155"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5N-xm-OMg">
-                                <rect key="frame" x="272" y="459" width="242" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5N-xm-OMg">
+                                <rect key="frame" x="167" y="540" width="196" height="49"/>
                                 <state key="normal" title="Start Run!"/>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZm-Mh-xtO">
-                                <rect key="frame" x="259" y="262" width="243" height="155"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZm-Mh-xtO">
+                                <rect key="frame" x="167" y="293" width="147" height="218"/>
+                                <color key="tintColor" red="0.14117647058823529" green="0.44705882352941179" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="eWq-jd-tdc"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="TAP-j6-RHk"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGr-qU-UoE">
+                                <rect key="frame" x="167" y="53" width="142" height="150"/>
+                                <color key="tintColor" red="0.14117647059999999" green="0.44705882349999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="0QN-4l-aaY"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="sm8-Sl-0J1"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="EZm-Mh-xtO" firstAttribute="leading" secondItem="Lz1-hr-zZD" secondAttribute="trailing" constant="1" id="1b7-ZV-9du"/>
+                            <constraint firstItem="Lz1-hr-zZD" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="3tv-kH-c3G"/>
+                            <constraint firstItem="kGr-qU-UoE" firstAttribute="leading" secondItem="EZm-Mh-xtO" secondAttribute="leading" id="4gm-1i-deD"/>
+                            <constraint firstItem="kGr-qU-UoE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="33" id="5zd-uW-l3U"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerY" secondItem="kGr-qU-UoE" secondAttribute="centerY" id="7vR-z7-MdM"/>
+                            <constraint firstItem="Lz1-hr-zZD" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="8" id="Gys-ln-Vmw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D5N-xm-OMg" secondAttribute="trailing" constant="-4" id="HKR-7P-N5W"/>
+                            <constraint firstItem="D5N-xm-OMg" firstAttribute="leading" secondItem="EZm-Mh-xtO" secondAttribute="leading" id="JvJ-vb-9AM"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="95" id="Jvj-lR-Igm"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Lz1-hr-zZD" secondAttribute="bottom" constant="199" id="SLv-mI-kh3"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="D5N-xm-OMg" secondAttribute="bottom" constant="29" id="VmM-YO-J5c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kGr-qU-UoE" secondAttribute="trailing" constant="50" id="ZrF-M6-5Zq"/>
+                            <constraint firstItem="D5N-xm-OMg" firstAttribute="top" secondItem="EZm-Mh-xtO" secondAttribute="bottom" constant="29" id="hr2-vO-EQP"/>
+                            <constraint firstItem="kGr-qU-UoE" firstAttribute="leading" secondItem="KQZ-1w-vlD" secondAttribute="trailing" constant="20" id="p9z-kD-CN7"/>
+                            <constraint firstItem="EZm-Mh-xtO" firstAttribute="top" secondItem="kGr-qU-UoE" secondAttribute="bottom" constant="90" id="phs-ud-FdA"/>
+                            <constraint firstItem="Lz1-hr-zZD" firstAttribute="centerY" secondItem="EZm-Mh-xtO" secondAttribute="centerY" id="poP-Nh-wrR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EZm-Mh-xtO" secondAttribute="trailing" constant="45" id="w34-c9-Org"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Run!" selectedImage="RunningRabbit.png" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Run!" image="first" id="acW-dT-cKf"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="distancePicker" destination="EZm-Mh-xtO" id="ItA-JL-bCW"/>
+                        <outlet property="timePicker" destination="kGr-qU-UoE" id="xAp-fi-8n4"/>
+                        <segue destination="IHM-AI-vQu" kind="show" id="Ni8-nI-CB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="-317"/>
+            <point key="canvasLocation" x="725.5" y="-356.5"/>
         </scene>
         <!--Actual Run View Controller-->
         <scene sceneID="yyI-hG-R1n">
@@ -63,7 +102,7 @@
                         <viewControllerLayoutGuide type="bottom" id="rb7-8R-oL0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QOc-ee-xcj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -106,7 +145,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="History" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="History" image="second" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,7 +172,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="History" width="30" height="30"/>
-        <image name="RunningRabbit.png" width="142" height="120"/>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>
