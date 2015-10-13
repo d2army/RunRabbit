@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet UIPickerView *timePicker;
 
+- (IBAction) startRunning:(id) sender;
+
 @property (strong, nonatomic) NSArray *distanceChoices;
 
 @property (strong, nonatomic) NSArray *timeChoices;

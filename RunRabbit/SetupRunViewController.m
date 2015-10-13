@@ -13,6 +13,9 @@
 @end
 
 @implementation SetupRunViewController
+@synthesize distancePicker = _distancePicker;
+@synthesize timePicker = _timePicker;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +31,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)startRunning:(id)sender {
+    UIViewController *actualRunViewController =
+    [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController];
+    
+    //[self presentViewController:actualRunViewController animated:NO completion:nil ];
+    [self performSegueWithIdentifier:@"showActualRun" sender:self];
+    
+}
+
 
 
 /*
@@ -48,7 +62,17 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component {
     
-    return [self.timeChoices objectAtIndex:row];
+    if (pickerView.tag == 1) {
+        return [self.timeChoices objectAtIndex:row];
+    } else if (pickerView.tag == 2) {
+        return [self.distanceChoices objectAtIndex:row];
+    }
+    
+    return NULL;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
     
 }
 

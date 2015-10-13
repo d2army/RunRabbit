@@ -42,8 +42,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5N-xm-OMg">
                                 <rect key="frame" x="167" y="540" width="196" height="49"/>
                                 <state key="normal" title="Start Run!"/>
+                                <connections>
+                                    <action selector="startRunning:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kvC-qP-oH0"/>
+                                </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZm-Mh-xtO">
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZm-Mh-xtO">
                                 <rect key="frame" x="167" y="293" width="147" height="218"/>
                                 <color key="tintColor" red="0.14117647058823529" green="0.44705882352941179" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -51,7 +54,7 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="TAP-j6-RHk"/>
                                 </connections>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGr-qU-UoE">
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGr-qU-UoE">
                                 <rect key="frame" x="167" y="53" width="142" height="150"/>
                                 <color key="tintColor" red="0.14117647059999999" green="0.44705882349999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -86,7 +89,7 @@
                     <connections>
                         <outlet property="distancePicker" destination="EZm-Mh-xtO" id="ItA-JL-bCW"/>
                         <outlet property="timePicker" destination="kGr-qU-UoE" id="xAp-fi-8n4"/>
-                        <segue destination="IHM-AI-vQu" kind="show" id="Ni8-nI-CB0"/>
+                        <segue destination="IHM-AI-vQu" kind="presentation" identifier="showActualRun" id="Ni8-nI-CB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -104,12 +107,53 @@
                     <view key="view" contentMode="scaleToFill" id="QOc-ee-xcj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Time Left" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-zQ-2yg">
+                                <rect key="frame" x="50" y="164" width="104" height="26"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="4ZX-HW-vwb"/>
+                                    <constraint firstAttribute="height" constant="26" id="A7t-9X-pKq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Distance Left" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-Ya-l16">
+                                <rect key="frame" x="31" y="369" width="142" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Wqk-tu-q21"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-lP-wVE">
+                                <rect key="frame" x="213" y="186" width="104" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tNw-QW-bv9">
+                                <rect key="frame" x="190" y="376" width="150" height="2"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-9x-eny">
+                                <rect key="frame" x="190" y="176" width="150" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 mile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA1-ic-eca">
+                                <rect key="frame" x="213" y="392" width="104" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEK-tX-Jbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="-312"/>
+            <point key="canvasLocation" x="1392.5" y="-312.5"/>
         </scene>
         <!--History-->
         <scene sceneID="wg7-f3-ORb">
