@@ -7,6 +7,7 @@
 //
 
 #import "SetupRunViewController.h"
+#import "ActualRunViewController.h"
 
 @interface SetupRunViewController ()
 
@@ -39,7 +40,22 @@
     
     //[self presentViewController:actualRunViewController animated:NO completion:nil ];
     [self performSegueWithIdentifier:@"showActualRun" sender:self];
-    
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showActualRun"]) {
+        
+        ActualRunViewController *vc = [segue destinationViewController];
+        
+        NSUInteger selectedRow = [self.distancePicker selectedRowInComponent:0];
+        NSString *distanceValueAsString = [[self.distanceChoices objectAtIndex:selectedRow] componentsSeparatedByString:@" "][0];
+        vc.distanceLeft = [distanceValueAsString doubleValue];
+        
+        selectedRow = [self.timePicker selectedRowInComponent:0];
+        NSString *timeValueAsString = [[self.timeChoices objectAtIndex:selectedRow] componentsSeparatedByString:@" "][0];
+        vc.timeLeft = [timeValueAsString doubleValue];
+    }
 }
 
 

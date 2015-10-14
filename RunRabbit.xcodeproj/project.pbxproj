@@ -10,6 +10,9 @@
 		3C26FE101BC99DA800F2D5FB /* ActualRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26FE0F1BC99DA800F2D5FB /* ActualRunViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3C26FE161BC9CC0600F2D5FB /* RunningRabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE151BC9CC0600F2D5FB /* RunningRabbit.png */; settings = {ASSET_TAGS = (); }; };
 		3C26FE181BC9D4C800F2D5FB /* Running-Rabbit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE171BC9D4C800F2D5FB /* Running-Rabbit-icon.png */; settings = {ASSET_TAGS = (); }; };
+		3C26FE1A1BCE072000F2D5FB /* poo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE191BCE072000F2D5FB /* poo.jpg */; settings = {ASSET_TAGS = (); }; };
+		3C26FE201BCE121500F2D5FB /* CountdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26FE1F1BCE121500F2D5FB /* CountdownView.m */; settings = {ASSET_TAGS = (); }; };
+		3C26FE231BCE151900F2D5FB /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE221BCE151900F2D5FB /* CountdownView.xib */; settings = {ASSET_TAGS = (); }; };
 		3CD7BC641B91762F00648A47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC631B91762F00648A47 /* main.m */; };
 		3CD7BC671B91762F00648A47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC661B91762F00648A47 /* AppDelegate.m */; };
 		3CD7BC6A1B91762F00648A47 /* SetupRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC691B91762F00648A47 /* SetupRunViewController.m */; };
@@ -35,6 +38,10 @@
 		3C26FE111BC99E3800F2D5FB /* ActualRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActualRunViewController.h; sourceTree = "<group>"; };
 		3C26FE151BC9CC0600F2D5FB /* RunningRabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RunningRabbit.png; sourceTree = "<group>"; };
 		3C26FE171BC9D4C800F2D5FB /* Running-Rabbit-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Running-Rabbit-icon.png"; sourceTree = "<group>"; };
+		3C26FE191BCE072000F2D5FB /* poo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = poo.jpg; sourceTree = "<group>"; };
+		3C26FE1E1BCE121500F2D5FB /* CountdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownView.h; sourceTree = "<group>"; };
+		3C26FE1F1BCE121500F2D5FB /* CountdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownView.m; sourceTree = "<group>"; };
+		3C26FE221BCE151900F2D5FB /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
 		3CD7BC5E1B91762F00648A47 /* RunRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD7BC621B91762F00648A47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CD7BC631B91762F00648A47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,6 +77,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C26FE1B1BCE109B00F2D5FB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CD7BC681B91762F00648A47 /* SetupRunViewController.h */,
+				3CD7BC691B91762F00648A47 /* SetupRunViewController.m */,
+				3C26FE111BC99E3800F2D5FB /* ActualRunViewController.h */,
+				3C26FE0F1BC99DA800F2D5FB /* ActualRunViewController.m */,
+				3CD7BC6B1B91762F00648A47 /* HistoryViewController.h */,
+				3CD7BC6C1B91762F00648A47 /* HistoryViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3C26FE1C1BCE10A100F2D5FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		3C26FE1D1BCE10BD00F2D5FB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3CD7BC6E1B91762F00648A47 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		3C26FE211BCE150100F2D5FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C26FE1E1BCE121500F2D5FB /* CountdownView.h */,
+				3C26FE1F1BCE121500F2D5FB /* CountdownView.m */,
+				3C26FE221BCE151900F2D5FB /* CountdownView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		3CD7BC551B91762E00648A47 = {
 			isa = PBXGroup;
 			children = (
@@ -91,15 +136,12 @@
 		3CD7BC601B91762F00648A47 /* RunRabbit */ = {
 			isa = PBXGroup;
 			children = (
+				3C26FE211BCE150100F2D5FB /* Views */,
+				3C26FE1D1BCE10BD00F2D5FB /* Storyboard */,
+				3C26FE1C1BCE10A100F2D5FB /* Components */,
+				3C26FE1B1BCE109B00F2D5FB /* Controllers */,
 				3CD7BC651B91762F00648A47 /* AppDelegate.h */,
 				3CD7BC661B91762F00648A47 /* AppDelegate.m */,
-				3CD7BC681B91762F00648A47 /* SetupRunViewController.h */,
-				3CD7BC691B91762F00648A47 /* SetupRunViewController.m */,
-				3C26FE111BC99E3800F2D5FB /* ActualRunViewController.h */,
-				3C26FE0F1BC99DA800F2D5FB /* ActualRunViewController.m */,
-				3CD7BC6B1B91762F00648A47 /* HistoryViewController.h */,
-				3CD7BC6C1B91762F00648A47 /* HistoryViewController.m */,
-				3CD7BC6E1B91762F00648A47 /* Main.storyboard */,
 				3CD7BC711B91762F00648A47 /* Images.xcassets */,
 				3CD7BC731B91762F00648A47 /* LaunchScreen.xib */,
 				3CD7BC611B91762F00648A47 /* Supporting Files */,
@@ -111,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				3C26FE151BC9CC0600F2D5FB /* RunningRabbit.png */,
+				3C26FE191BCE072000F2D5FB /* poo.jpg */,
 				3C26FE171BC9D4C800F2D5FB /* Running-Rabbit-icon.png */,
 				3CD7BC621B91762F00648A47 /* Info.plist */,
 				3CD7BC631B91762F00648A47 /* main.m */,
@@ -216,6 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C26FE231BCE151900F2D5FB /* CountdownView.xib in Resources */,
+				3C26FE1A1BCE072000F2D5FB /* poo.jpg in Resources */,
 				3CD7BC701B91762F00648A47 /* Main.storyboard in Resources */,
 				3CD7BC751B91762F00648A47 /* LaunchScreen.xib in Resources */,
 				3C26FE181BC9D4C800F2D5FB /* Running-Rabbit-icon.png in Resources */,
@@ -241,6 +286,7 @@
 				3CD7BC6D1B91762F00648A47 /* HistoryViewController.m in Sources */,
 				3CD7BC671B91762F00648A47 /* AppDelegate.m in Sources */,
 				3CD7BC6A1B91762F00648A47 /* SetupRunViewController.m in Sources */,
+				3C26FE201BCE121500F2D5FB /* CountdownView.m in Sources */,
 				3CD7BC641B91762F00648A47 /* main.m in Sources */,
 				3C26FE101BC99DA800F2D5FB /* ActualRunViewController.m in Sources */,
 			);

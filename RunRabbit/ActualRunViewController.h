@@ -10,6 +10,12 @@
 
 @interface ActualRunViewController : UIViewController
 
+@property (strong,nonatomic) IBOutlet UILabel *timeLeftLabel;
+@property (nonatomic,strong) IBOutlet UILabel *distanceLeftLabel;
+
+
+@property (nonatomic) double distanceLeft;
+@property (nonatomic) double timeLeft;
 
 @end
 
