@@ -107,76 +107,8 @@
                     <view key="view" contentMode="scaleToFill" id="QOc-ee-xcj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Distance Left" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-Ya-l16">
-                                <rect key="frame" x="31" y="369" width="142" height="35"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="rJA-p4-SBE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-lP-wVE">
-                                <rect key="frame" x="213" y="186" width="104" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="T2B-hU-aSI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tNw-QW-bv9">
-                                <rect key="frame" x="190" y="386" width="150" height="2"/>
-                            </progressView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-9x-eny">
-                                <rect key="frame" x="190" y="176" width="150" height="2"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 mile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA1-ic-eca">
-                                <rect key="frame" x="213" y="396" width="104" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Time Left" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dix-zQ-2yg">
-                                <rect key="frame" x="50" y="164" width="104" height="26"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="D5r-Kx-3eX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tNw-QW-bv9" firstAttribute="leading" secondItem="RHp-9x-eny" secondAttribute="leading" id="17n-To-aX3"/>
-                            <constraint firstItem="tNw-QW-bv9" firstAttribute="trailing" secondItem="RHp-9x-eny" secondAttribute="trailing" id="73K-zL-m9q"/>
-                            <constraint firstItem="rb7-8R-oL0" firstAttribute="top" secondItem="vaJ-Ya-l16" secondAttribute="bottom" constant="263" id="Bpn-i7-fsc"/>
-                            <constraint firstItem="RTt-lP-wVE" firstAttribute="top" secondItem="RHp-9x-eny" secondAttribute="bottom" constant="8" symbolic="YES" id="D5k-fi-AJC"/>
-                            <constraint firstItem="wA1-ic-eca" firstAttribute="top" secondItem="tNw-QW-bv9" secondAttribute="bottom" constant="8" symbolic="YES" id="GbJ-4f-nWX"/>
-                            <constraint firstItem="wA1-ic-eca" firstAttribute="leading" secondItem="vaJ-Ya-l16" secondAttribute="trailing" constant="40" id="Jbt-Q2-1c6"/>
-                            <constraint firstItem="Dix-zQ-2yg" firstAttribute="top" secondItem="BZ5-NZ-KIi" secondAttribute="bottom" constant="144" id="Ssf-6W-OXr"/>
-                            <constraint firstItem="RTt-lP-wVE" firstAttribute="leading" secondItem="wA1-ic-eca" secondAttribute="leading" id="TxK-0f-BKR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RTt-lP-wVE" secondAttribute="trailing" constant="42" id="WPr-Rq-lUv"/>
-                            <constraint firstItem="vaJ-Ya-l16" firstAttribute="leading" secondItem="QOc-ee-xcj" secondAttribute="leadingMargin" constant="15" id="WtP-Se-mO1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RHp-9x-eny" secondAttribute="trailing" constant="19" id="Xvj-Xv-pZP"/>
-                            <constraint firstItem="rb7-8R-oL0" firstAttribute="top" secondItem="wA1-ic-eca" secondAttribute="bottom" constant="213" id="Xw8-hm-HUA"/>
-                            <constraint firstItem="tNw-QW-bv9" firstAttribute="centerY" secondItem="vaJ-Ya-l16" secondAttribute="centerY" id="Z68-AO-nTo"/>
-                            <constraint firstItem="RTt-lP-wVE" firstAttribute="trailing" secondItem="wA1-ic-eca" secondAttribute="trailing" id="bcU-ef-KJI"/>
-                            <constraint firstItem="vaJ-Ya-l16" firstAttribute="centerX" secondItem="Dix-zQ-2yg" secondAttribute="centerX" id="c49-hr-4ht"/>
-                            <constraint firstItem="RHp-9x-eny" firstAttribute="top" secondItem="BZ5-NZ-KIi" secondAttribute="bottom" constant="156" id="cMs-bz-tNb"/>
-                            <constraint firstItem="Dix-zQ-2yg" firstAttribute="centerY" secondItem="RHp-9x-eny" secondAttribute="centerY" id="cfc-P7-GDp"/>
-                            <constraint firstItem="RTt-lP-wVE" firstAttribute="centerX" secondItem="RHp-9x-eny" secondAttribute="centerX" id="eIX-w1-3pk"/>
-                            <constraint firstItem="RTt-lP-wVE" firstAttribute="leading" secondItem="Dix-zQ-2yg" secondAttribute="trailing" constant="59" id="hRq-jG-q5n"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="distanceLeftLabel" destination="wA1-ic-eca" id="ZC7-cX-YHr"/>
-                        <outlet property="timeLeftLabel" destination="RTt-lP-wVE" id="nUV-zh-ImR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEK-tX-Jbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

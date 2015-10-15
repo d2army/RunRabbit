@@ -13,10 +13,8 @@
 @end
 
 @implementation ActualRunViewController
-@synthesize distanceLeft;
-@synthesize timeLeft;
-@synthesize timeLeftLabel = _timeLeftLabel;
-@synthesize distanceLeftLabel = _distanceLeftLabel;
+@synthesize distanceLeft = _distanceLeft;
+@synthesize timeLeft = _timeLeft;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +24,18 @@
 - (void)viewDidAppear:(BOOL)animated {
     //Set up the time and distance labels
     
+    CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
+    [distanceView initialize:_distanceLeft OfType:@"Distance" withMeasurementUnit:@"mile(s)"];
     
+
+    CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
+    [timeView initialize:_timeLeft OfType:@"Time" withMeasurementUnit:@"mile(s)"];
+    
+    
+    //add views to house
+    [self.view addSubview:distanceView];
+    
+    [self.view addSubview:timeView];
 }
 
 - (void)didReceiveMemoryWarning {
