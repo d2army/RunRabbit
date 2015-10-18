@@ -17,7 +17,8 @@
 
 @property (nonatomic) double countdownValue;
 @property (nonatomic,strong) NSString *unitOfMeasurement;
+@property (nonatomic,strong) NSTimer *countdownTimer;
 
-- (void) initialize:(double)countdownValue OfType:(NSString *) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement ;
+- (void) initialize:(double)countdownValue OfType:(NSString *) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
 
 @end

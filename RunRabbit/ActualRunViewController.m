@@ -25,11 +25,11 @@
     //Set up the time and distance labels
     
     CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [distanceView initialize:_distanceLeft OfType:@"Distance" withMeasurementUnit:@"mile(s)"];
+    [distanceView initialize:_distanceLeft OfType:@"Distance" withMeasurementUnit:@"mile(s)" withX:18 withY:115];
     
 
     CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [timeView initialize:_timeLeft OfType:@"Time" withMeasurementUnit:@"mile(s)"];
+    [timeView initialize:_timeLeft OfType:@"Time" withMeasurementUnit:@"mile(s)" withX:18 withY:384];
     
     
     //add views to house
