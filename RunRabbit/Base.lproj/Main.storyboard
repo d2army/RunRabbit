@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5N-xm-OMg">
-                                <rect key="frame" x="167" y="540" width="196" height="49"/>
+                                <rect key="frame" x="167" y="540" width="147" height="49"/>
                                 <state key="normal" title="Start Run!"/>
                                 <connections>
                                     <action selector="startRunning:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kvC-qP-oH0"/>
@@ -70,18 +70,18 @@
                             <constraint firstItem="kGr-qU-UoE" firstAttribute="leading" secondItem="EZm-Mh-xtO" secondAttribute="leading" id="4gm-1i-deD"/>
                             <constraint firstItem="kGr-qU-UoE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="33" id="5zd-uW-l3U"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerY" secondItem="kGr-qU-UoE" secondAttribute="centerY" id="7vR-z7-MdM"/>
+                            <constraint firstItem="D5N-xm-OMg" firstAttribute="trailing" secondItem="EZm-Mh-xtO" secondAttribute="trailing" id="Fx0-5q-EqC"/>
                             <constraint firstItem="Lz1-hr-zZD" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="8" id="Gys-ln-Vmw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="D5N-xm-OMg" secondAttribute="trailing" constant="-4" id="HKR-7P-N5W"/>
-                            <constraint firstItem="D5N-xm-OMg" firstAttribute="leading" secondItem="EZm-Mh-xtO" secondAttribute="leading" id="JvJ-vb-9AM"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="95" id="Jvj-lR-Igm"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Lz1-hr-zZD" secondAttribute="bottom" constant="199" id="SLv-mI-kh3"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="D5N-xm-OMg" secondAttribute="bottom" constant="29" id="VmM-YO-J5c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kGr-qU-UoE" secondAttribute="trailing" constant="50" id="ZrF-M6-5Zq"/>
-                            <constraint firstItem="D5N-xm-OMg" firstAttribute="top" secondItem="EZm-Mh-xtO" secondAttribute="bottom" constant="29" id="hr2-vO-EQP"/>
+                            <constraint firstItem="D5N-xm-OMg" firstAttribute="leading" secondItem="EZm-Mh-xtO" secondAttribute="leading" id="d5L-BM-p7n"/>
+                            <constraint firstItem="D5N-xm-OMg" firstAttribute="top" secondItem="EZm-Mh-xtO" secondAttribute="bottom" constant="29" id="ef3-yu-ZAn"/>
                             <constraint firstItem="kGr-qU-UoE" firstAttribute="leading" secondItem="KQZ-1w-vlD" secondAttribute="trailing" constant="20" id="p9z-kD-CN7"/>
                             <constraint firstItem="EZm-Mh-xtO" firstAttribute="top" secondItem="kGr-qU-UoE" secondAttribute="bottom" constant="90" id="phs-ud-FdA"/>
                             <constraint firstItem="Lz1-hr-zZD" firstAttribute="centerY" secondItem="EZm-Mh-xtO" secondAttribute="centerY" id="poP-Nh-wrR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EZm-Mh-xtO" secondAttribute="trailing" constant="45" id="w34-c9-Org"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="D5N-xm-OMg" secondAttribute="bottom" constant="29" id="xAw-xi-Qwv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Run!" image="first" id="acW-dT-cKf"/>
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEK-tX-Jbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392.5" y="-312.5"/>
+            <point key="canvasLocation" x="1370.5" y="-356.5"/>
         </scene>
         <!--History-->
         <scene sceneID="wg7-f3-ORb">
