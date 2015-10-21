@@ -16,6 +16,7 @@
 @property (strong,nonatomic) IBOutlet UIProgressView *progressBar;
 
 @property (nonatomic) double countdownValue;
+@property (nonatomic) double countdownMax;
 @property (nonatomic,strong) NSString *unitOfMeasurement;
 @property (nonatomic,strong) NSTimer *countdownTimer;
 

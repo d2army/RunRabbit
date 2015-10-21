@@ -26,7 +26,7 @@
     
 
     CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [timeView initialize:_timeLeft OfType:@"Time" withMeasurementUnit:@"mile(s)" withX:18 withY:115];
+    [timeView initialize:_timeLeft OfType:@"Time" withMeasurementUnit:@"second(s)" withX:18 withY:115];
     
     CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
     [distanceView initialize:_distanceLeft OfType:@"Distance" withMeasurementUnit:@"mile(s)" withX:18 withY:384];
