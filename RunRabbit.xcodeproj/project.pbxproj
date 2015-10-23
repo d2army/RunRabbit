@@ -15,6 +15,7 @@
 		3C26FE231BCE151900F2D5FB /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE221BCE151900F2D5FB /* CountdownView.xib */; settings = {ASSET_TAGS = (); }; };
 		3CBD149A1BD767C500B6B5C7 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14991BD767C500B6B5C7 /* LocationManager.m */; settings = {ASSET_TAGS = (); }; };
 		3CBD149C1BD76AC600B6B5C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBD149B1BD76AC600B6B5C7 /* CoreLocation.framework */; };
+		3CBD149F1BD8995D00B6B5C7 /* TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */; settings = {ASSET_TAGS = (); }; };
 		3CD7BC641B91762F00648A47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC631B91762F00648A47 /* main.m */; };
 		3CD7BC671B91762F00648A47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC661B91762F00648A47 /* AppDelegate.m */; };
 		3CD7BC6A1B91762F00648A47 /* SetupRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC691B91762F00648A47 /* SetupRunViewController.m */; };
@@ -47,6 +48,9 @@
 		3CBD14981BD767C500B6B5C7 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		3CBD14991BD767C500B6B5C7 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		3CBD149B1BD76AC600B6B5C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3CBD149D1BD8995D00B6B5C7 /* TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager.h; sourceTree = "<group>"; };
+		3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerManager.m; sourceTree = "<group>"; };
+		3CBD14A01BD9E75100B6B5C7 /* DataUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUpdater.h; sourceTree = "<group>"; };
 		3CD7BC5E1B91762F00648A47 /* RunRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD7BC621B91762F00648A47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CD7BC631B91762F00648A47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +105,9 @@
 			children = (
 				3CBD14981BD767C500B6B5C7 /* LocationManager.h */,
 				3CBD14991BD767C500B6B5C7 /* LocationManager.m */,
+				3CBD149D1BD8995D00B6B5C7 /* TimerManager.h */,
+				3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */,
+				3CBD14A01BD9E75100B6B5C7 /* DataUpdater.h */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -297,6 +304,7 @@
 				3CD7BC671B91762F00648A47 /* AppDelegate.m in Sources */,
 				3CD7BC6A1B91762F00648A47 /* SetupRunViewController.m in Sources */,
 				3C26FE201BCE121500F2D5FB /* CountdownView.m in Sources */,
+				3CBD149F1BD8995D00B6B5C7 /* TimerManager.m in Sources */,
 				3CD7BC641B91762F00648A47 /* main.m in Sources */,
 				3C26FE101BC99DA800F2D5FB /* ActualRunViewController.m in Sources */,
 			);
