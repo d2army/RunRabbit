@@ -9,5 +9,40 @@
 #import "TimerManager.h"
 
 @implementation TimerManager
+@synthesize countdownTimer = _countdownTimer;
+@synthesize countdownValue = _countdownValue;
+
+/*
+ * format the value properly
+ */
+- (void) setupCounter {
+    
+    //set up the count down timer
+    _countdownTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0
+                                                       target: self
+                                                     selector:@selector(onTick:)
+                                                     userInfo: nil repeats:YES];
+    
+}
+
+/*
+ * Happens on tick
+ */
+-(void) onTick:(NSTimer *)timer {
+    
+    if (_countdownValue > 0) {
+        //update the countdown
+        _countdownValue -= 1.0;
+        [self setCountdownValue];
+    } else {
+        //stop timer
+        [_countdownTimer invalidate];
+        _countdownTimer = nil;
+    }
+    
+
+}
+
+
 
 @end

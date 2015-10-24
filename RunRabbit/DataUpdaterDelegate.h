@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol DataUpdater
+@protocol DataUpdaterDelegate
 
-- (void) updateCountdownValue;
-
-
+-(void) setCountdownValue:(double)countdownValue;
+-(void) setPRogressBarValue:(double) countdownValue;
 
 @end

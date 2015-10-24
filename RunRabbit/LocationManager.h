@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "DataUpdaterDelegate.h"
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
@@ -16,7 +17,7 @@
 @property (nonatomic) double altitude;
 @property (nonatomic) double speed;
 @property CLLocationManager *locationManager;
-@property (nonatomic,strong) id delegateObject;
+@property (weak) id <DataUpdaterDelegate> delegateObject;
 
 
 -(void) initialize:(NSObject *) delegate;

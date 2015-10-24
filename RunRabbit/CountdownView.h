@@ -8,20 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "DataUpdaterDelegate.h"
 
-@interface CountdownView : UIView
+@interface CountdownView : UIView <DataUpdaterDelegate>
 
 @property (strong,nonatomic) IBOutlet UILabel *amountLeftLabel;
 @property (strong,nonatomic) IBOutlet UILabel *quantityTypeLabel;
 @property (strong,nonatomic) IBOutlet UIProgressView *progressBar;
-
 @property (nonatomic) double countdownValue;
 @property (nonatomic) double countdownMax;
 @property (nonatomic,strong) NSString *unitOfMeasurement;
-@property (nonatomic,strong) NSTimer *countdownTimer;
+
 
 //delegate object to provide info on
 
 - (void) initialize:(double)countdownValue OfType:(NSString *) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
+
+
+//Protocol methods to be implemented
+-(void) setCountdownValue:(double)countdownValue;
+-(void) setPRogressBarValue:(double) countdownValue;
 
 @end

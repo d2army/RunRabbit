@@ -13,9 +13,8 @@
 @synthesize amountLeftLabel = _amountLeftLabel;
 @synthesize quantityTypeLabel = _quantityTypeLabel;
 @synthesize progressBar = _progressBar;
-@synthesize countdownTimer = _countdownTimer;
-
 @synthesize countdownValue = _countdownValue;
+
 @synthesize countdownMax = _countdownMax;
 @synthesize unitOfMeasurement = _unitOfMeasurement;
 
@@ -32,50 +31,23 @@
     self.frame = CGRectMake( xCoord, yCoord, self.frame.size.width, self.frame.size.height );
     
     
-    [self setupCounter];
+    //[self setupCounter];
 }
 
 
 
-/*
- * format the value properly
- */
-- (void) setupCounter {
-
-    //set up the count down timer
-    _countdownTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0
-                                       target: self
-                                     selector:@selector(onTick:)
-                                     userInfo: nil repeats:YES];
-    
-}
-
-/*
- * Happens on tick
- */
--(void) onTick:(NSTimer *)timer {
-    
-    if (_countdownValue > 0) {
-        //update the countdown
-        _countdownValue -= 1.0;
-        [self setCountdownValue];
-    } else {
-        //stop timer
-        [_countdownTimer invalidate];
-        _countdownTimer = nil;
-    }
-    
-    //set progress bar
-    _progressBar.progress = (_countdownValue/_countdownMax) * 1.0;
-    
-}
 
 
--(void) setCountdownValue {
-    NSString *finalString = [NSString stringWithFormat:@"%g %@",_countdownValue,_unitOfMeasurement];
+-(void) setCountdownValue:(double)countdownValue {
+    NSString *finalString = [NSString stringWithFormat:@"%g %@",countdownValue,_unitOfMeasurement];
     
     _amountLeftLabel.text = finalString;
 }
 
+
+-(void) setPRogressBarValue:(double) countdownValue {
+    //set progress bar
+    _progressBar.progress = (countdownValue/_countdownMax) * 1.0;
+}
 @end
 

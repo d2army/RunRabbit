@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataUpdaterDelegate.h"
 
 @interface TimerManager : NSObject
+
+@property (nonatomic,strong) NSTimer *countdownTimer;
+@property (nonatomic) double countdownValue;
+@property (weak) id <DataUpdaterDelegate> delegateObject;
 
 @end
