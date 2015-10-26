@@ -13,12 +13,12 @@
 @synthesize longitude = _longitude;
 @synthesize altitude = _altitude;
 @synthesize speed = _speed;
-@synthesize delegateObject = _delegateObject;
+@synthesize view = _view;
 @synthesize locationManager = _locationManager;
 
 
--(void) initialize:(NSObject *) delegate {
-    _delegateObject = delegate;
+-(void) initialize:(id) delegate {
+    _view = delegate;
     
     _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
     _locationManager.delegate = self; // we set the delegate of locationManager to self.
@@ -48,7 +48,7 @@
     _altitude = (double)crnLoc.altitude;
     _speed = (double)crnLoc.speed;
     
-    [_delegateObject updateLocation];
+    [_view updateLocation];
 }
 
 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "DataUpdaterDelegate.h"
+#import "DataProcessorFactory.h"
+
 
 @interface CountdownView : UIView <DataUpdaterDelegate>
 
@@ -22,7 +24,7 @@
 
 //delegate object to provide info on
 
-- (void) initialize:(double)countdownValue OfType:(NSString *) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
+- (void) initialize:(double)countdownValue OfType:(DataProcessorType) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
 
 
 //Protocol methods to be implemented

@@ -11,6 +11,6 @@
 @protocol DataUpdaterDelegate
 
 -(void) setCountdownValue:(double)countdownValue;
--(void) setPRogressBarValue:(double) countdownValue;
+-(void) setProgressBarValue:(double) countdownValue;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ActualRunViewController.h"
+#import "DataProcessorFactory.h"
 
 @interface ActualRunViewController ()
 
@@ -26,10 +27,10 @@
     
 
     CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [timeView initialize:_timeLeft OfType:@"Time" withMeasurementUnit:@"second(s)" withX:18 withY:115];
+    [timeView initialize:_timeLeft OfType:NSTimeType withMeasurementUnit:@"second(s)" withX:18 withY:115];
     
     CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [distanceView initialize:_distanceLeft OfType:@"Distance" withMeasurementUnit:@"mile(s)" withX:18 withY:384];
+    [distanceView initialize:_distanceLeft OfType:NSDistanceType withMeasurementUnit:@"mile(s)" withX:18 withY:384];
     
     
     //add views to house

@@ -17,10 +17,10 @@
 @property (nonatomic) double altitude;
 @property (nonatomic) double speed;
 @property CLLocationManager *locationManager;
-@property (weak) id <DataUpdaterDelegate> delegateObject;
+@property (weak) id <DataUpdaterDelegate> view;
 
 
--(void) initialize:(NSObject *) delegate;
+-(void) initialize:(id) delegate;
 
 -(void) startLocationSensing;
 

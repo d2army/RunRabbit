@@ -30,12 +30,14 @@
     
     self.frame = CGRectMake( xCoord, yCoord, self.frame.size.width, self.frame.size.height );
     
-    
-    //[self setupCounter];
+    [self setupDataProcessor:self];
 }
 
 
-
+- (void) setupDataProcessor:(CountdownView *)view {
+    
+    
+}
 
 
 -(void) setCountdownValue:(double)countdownValue {
