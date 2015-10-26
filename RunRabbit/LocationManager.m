@@ -17,8 +17,8 @@
 @synthesize locationManager = _locationManager;
 
 
--(void) initialize:(id) delegate {
-    _view = delegate;
+-(void) setViewObject:(id)view {
+    _view = view;
     
     _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
     _locationManager.delegate = self; // we set the delegate of locationManager to self.

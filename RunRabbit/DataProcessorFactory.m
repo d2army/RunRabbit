@@ -13,20 +13,22 @@
 @implementation DataProcessorFactory
 
 
-+ (id)createDataProcessorByMeasurementType:(DataProcessorType)type {
-    switch (type) {
-        case NSDistanceType:
-            LocationManager *item = [[LocationManager alloc] init];
++ (id)createDataProcessorByMeasurementType:(DataProcessorType)type withDelegate:(id) delegate {
+    if (type == NSDistanceType) {
+            
+    LocationManager *item = [[LocationManager alloc] init];
+        [item initialize:delegate];
+        
             
             return item;
-        break;
-            
-        default:
-            
-            return nil;
-            break;
-            
-    }
+    } else if (type == NSTimeType) {
+        TimerManager * item = [[TimerManager alloc] init];
+        [item initialize:delegate];
+        
+        return item;
+    } else {
     
+            return nil;
+    }
 }
 @end

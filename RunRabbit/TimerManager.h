@@ -13,6 +13,8 @@
 
 @property (nonatomic,strong) NSTimer *countdownTimer;
 @property (nonatomic) double countdownValue;
-@property (weak) id <DataUpdaterDelegate> countdownView;
+@property (weak) id <DataUpdaterDelegate> view;
+
+-(void) setViewObject:(id)view;
 
 @end

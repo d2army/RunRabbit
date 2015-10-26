@@ -11,6 +11,13 @@
 @implementation TimerManager
 @synthesize countdownTimer = _countdownTimer;
 @synthesize countdownValue = _countdownValue;
+@synthesize view = _view;
+
+
+
+-(void) setViewObject:(id)view {
+    _view = view;
+}
 
 /*
  * format the value properly
@@ -33,7 +40,7 @@
     if (_countdownValue > 0) {
         //update the countdown
         _countdownValue -= 1.0;
-        [self setCountdownValue];
+        [_view setCountdownValue:_countdownValue];
     } else {
         //stop timer
         [_countdownTimer invalidate];

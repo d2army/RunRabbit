@@ -19,8 +19,7 @@
 @property CLLocationManager *locationManager;
 @property (weak) id <DataUpdaterDelegate> view;
 
-
--(void) initialize:(id) delegate;
+-(void) setViewObject:(id)view;
 
 -(void) startLocationSensing;
 
