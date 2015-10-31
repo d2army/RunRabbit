@@ -51,9 +51,10 @@
 		3CBD149B1BD76AC600B6B5C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3CBD149D1BD8995D00B6B5C7 /* TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager.h; sourceTree = "<group>"; };
 		3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerManager.m; sourceTree = "<group>"; };
-		3CBD14A01BD9E75100B6B5C7 /* DataUpdaterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUpdaterDelegate.h; sourceTree = "<group>"; };
+		3CBD14A01BD9E75100B6B5C7 /* DataTargetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTargetDelegate.h; sourceTree = "<group>"; };
 		3CBD14A11BDDB8D300B6B5C7 /* DataProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProcessorFactory.h; sourceTree = "<group>"; };
 		3CBD14A21BDDB8D300B6B5C7 /* DataProcessorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProcessorFactory.m; sourceTree = "<group>"; };
+		3CBD14A51BE5715E00B6B5C7 /* DataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDelegate.h; sourceTree = "<group>"; };
 		3CD7BC5E1B91762F00648A47 /* RunRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD7BC621B91762F00648A47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CD7BC631B91762F00648A47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,11 +107,11 @@
 		3C26FE1C1BCE10A100F2D5FB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3CBD14A41BE570BA00B6B5C7 /* Protocols */,
 				3CBD14981BD767C500B6B5C7 /* LocationManager.h */,
 				3CBD14991BD767C500B6B5C7 /* LocationManager.m */,
 				3CBD149D1BD8995D00B6B5C7 /* TimerManager.h */,
 				3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */,
-				3CBD14A01BD9E75100B6B5C7 /* DataUpdaterDelegate.h */,
 				3CBD14A11BDDB8D300B6B5C7 /* DataProcessorFactory.h */,
 				3CBD14A21BDDB8D300B6B5C7 /* DataProcessorFactory.m */,
 			);
@@ -133,6 +134,15 @@
 				3C26FE221BCE151900F2D5FB /* CountdownView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		3CBD14A41BE570BA00B6B5C7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3CBD14A01BD9E75100B6B5C7 /* DataTargetDelegate.h */,
+				3CBD14A51BE5715E00B6B5C7 /* DataSourceDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		3CD7BC551B91762E00648A47 = {

@@ -16,19 +16,17 @@
 + (id)createDataProcessorByMeasurementType:(DataProcessorType)type withDelegate:(id) delegate {
     if (type == NSDistanceType) {
             
-    LocationManager *item = [[LocationManager alloc] init];
-        [item initialize:delegate];
+        LocationManager *item = [[LocationManager alloc] init];
+        [item initDelegateObject:delegate];
         
-            
-            return item;
+        return item;
     } else if (type == NSTimeType) {
         TimerManager * item = [[TimerManager alloc] init];
-        [item initialize:delegate];
+        [item initDelegateObject:delegate];
         
         return item;
     } else {
-    
-            return nil;
+        return nil;
     }
 }
 @end

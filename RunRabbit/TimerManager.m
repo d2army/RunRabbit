@@ -11,12 +11,12 @@
 @implementation TimerManager
 @synthesize countdownTimer = _countdownTimer;
 @synthesize countdownValue = _countdownValue;
-@synthesize view = _view;
+@synthesize delegate = _delegate;
 
 
 
--(void) setViewObject:(id)view {
-    _view = view;
+-(void) initDelegateObject:(id)delegate {
+    _delegate = delegate;
 }
 
 /*
@@ -36,18 +36,19 @@
  * Happens on tick
  */
 -(void) onTick:(NSTimer *)timer {
-    
     if (_countdownValue > 0) {
         //update the countdown
         _countdownValue -= 1.0;
-        [_view setCountdownValue:_countdownValue];
+        [_delegate setCountdownValue:_countdownValue];
     } else {
         //stop timer
         [_countdownTimer invalidate];
         _countdownTimer = nil;
     }
-    
+}
 
+-(NSString *) getUnitOfMeasurement {
+    return @"second(s)";
 }
 
 

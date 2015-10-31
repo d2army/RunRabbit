@@ -13,12 +13,12 @@
 @synthesize longitude = _longitude;
 @synthesize altitude = _altitude;
 @synthesize speed = _speed;
-@synthesize view = _view;
+@synthesize delegate = _delegate;
 @synthesize locationManager = _locationManager;
 
 
--(void) setViewObject:(id)view {
-    _view = view;
+-(void) initDelegateObject:(id)delegate {
+    _delegate = delegate;
     
     _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
     _locationManager.delegate = self; // we set the delegate of locationManager to self.
@@ -40,6 +40,8 @@
     [errorAlert show];*/
     NSLog(@"Error: %@",error.description);
 }
+
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *crnLoc = [locations lastObject];
@@ -48,7 +50,20 @@
     _altitude = (double)crnLoc.altitude;
     _speed = (double)crnLoc.speed;
     
-    [_view updateLocation];
+    [self calculateDistanceLeft];
+}
+
+/*
+ * Here, this function figures out how much distance is left and if there is a new distance value
+ */
+-(void) calculateDistanceLeft {
+    
+    
+}
+
+
+-(NSString *) getUnitOfMeasurement {
+    return @"mile(s)";
 }
 
 

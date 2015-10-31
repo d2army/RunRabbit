@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DataUpdaterDelegate.h"
+#import "DataTargetDelegate.h"
+#import "DataSourceDelegate.h"
 
-@interface TimerManager : NSObject
+@interface TimerManager : NSObject <DataSourceDelegate>
 
 @property (nonatomic,strong) NSTimer *countdownTimer;
 @property (nonatomic) double countdownValue;
-@property (weak) id <DataUpdaterDelegate> view;
+@property (weak) id <DataTargetDelegate> delegate;
 
--(void) setViewObject:(id)view;
+-(void) initDelegateObject:(id)delegate;
+
+-(NSString *) getUnitOfMeasurement;
 
 @end
