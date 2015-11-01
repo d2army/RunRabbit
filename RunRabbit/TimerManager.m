@@ -11,12 +11,33 @@
 @implementation TimerManager
 @synthesize countdownTimer = _countdownTimer;
 @synthesize countdownValue = _countdownValue;
-@synthesize delegate = _delegate;
+@synthesize observers = _observers;
+
+
+-(id) init {
+    self = [super init];
+    if (!self) return nil;
+    
+    _observers = [[NSMutableArray alloc] init];
+    
+    return self;
+}
 
 
 
--(void) initDelegateObject:(id)delegate {
-    _delegate = delegate;
+-(void) addObserver:(id)delegate {
+    [_observers addObject:delegate];
+
+}
+
+-(void) notifyObservers:(double)countdownValue {
+    for (id observer in _observers) {
+        [observer updateValue:countdownValue];
+    }
+}
+
+-(void) starUpdatingData {
+    [self setupCounter];
 }
 
 /*
@@ -39,7 +60,7 @@
     if (_countdownValue > 0) {
         //update the countdown
         _countdownValue -= 1.0;
-        [_delegate setCountdownValue:_countdownValue];
+        [self notifyObservers:_countdownValue];
     } else {
         //stop timer
         [_countdownTimer invalidate];
@@ -51,6 +72,10 @@
     return @"second(s)";
 }
 
+
+-(NSString *) getTypeTitle {
+    return @"Time";
+}
 
 
 @end

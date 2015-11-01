@@ -10,6 +10,6 @@
 
 @protocol DataTargetDelegate
 
--(void) setCountdownValue:(double)countdownValue;
+-(void) updateValue:(id)value;
 
 @end

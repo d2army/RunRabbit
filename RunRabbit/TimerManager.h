@@ -14,10 +14,21 @@
 
 @property (nonatomic,strong) NSTimer *countdownTimer;
 @property (nonatomic) double countdownValue;
-@property (weak) id <DataTargetDelegate> delegate;
+@property (nonatomic,strong) NSMutableArray *observers;
 
--(void) initDelegateObject:(id)delegate;
+-(id) init;
+
+/*
+ * Part of DataSourceDelegate protocol
+ */
+-(void) startUpdatingData;
+
+-(void) stopUpdatingData;
+
+-(void) addObserver:(id)delegate;
 
 -(NSString *) getUnitOfMeasurement;
+
+-(NSString *) getTypeTitle;
 
 @end

@@ -17,12 +17,12 @@
     if (type == NSDistanceType) {
             
         LocationManager *item = [[LocationManager alloc] init];
-        [item initDelegateObject:delegate];
+        [item addObserver:delegate];
         
         return item;
     } else if (type == NSTimeType) {
         TimerManager * item = [[TimerManager alloc] init];
-        [item initDelegateObject:delegate];
+        [item addObserver:delegate];
         
         return item;
     } else {

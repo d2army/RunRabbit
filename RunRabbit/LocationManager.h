@@ -18,14 +18,26 @@
 @property (nonatomic) double altitude;
 @property (nonatomic) double speed;
 @property CLLocationManager *locationManager;
-@property (weak) id <DataTargetDelegate> delegate;
-
--(void) initDelegateObject:(id)delegate;
+@property (nonatomic,strong) NSMutableArray *observers;
 
 -(void) startLocationSensing;
 
 -(void) stopLocationSensing;
 
+/*
+ * Part of DataSourceDelegate protocol
+ */
+
+-(id) init;
+
+-(void) startUpdatingData;
+
+-(void) stopUpdatingData;
+
+-(void) addObserver:(id)delegate;
+
 -(NSString *) getUnitOfMeasurement;
+
+-(NSString *) getTypeTitle;
 
 @end

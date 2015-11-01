@@ -27,9 +27,9 @@
 
 - (void) initialize:(double)countdownValue OfType:(DataProcessorType) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
 
-- (void) setProgressBarValue:(double)countdownValue;
+- (void) setProgressBarValue:(double)value;
 
 //Protocol methods to be implemented
-- (void) setCountdownValue:(double)countdownValue;
+- (void) updateValue:(id)countdownValue;
 
 @end

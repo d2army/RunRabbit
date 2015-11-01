@@ -15,6 +15,6 @@ enum {
 };
 typedef NSInteger DataProcessorType;
 
-+ (id)createDataProcessorByMeasurementType:(DataProcessorType)type;
++ (id)createDataProcessorByMeasurementType:(DataProcessorType)type withDelegate:(id) delegate;
 
 @end

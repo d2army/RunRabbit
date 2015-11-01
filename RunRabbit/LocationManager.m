@@ -13,17 +13,24 @@
 @synthesize longitude = _longitude;
 @synthesize altitude = _altitude;
 @synthesize speed = _speed;
-@synthesize delegate = _delegate;
+@synthesize observers = _observers;
 @synthesize locationManager = _locationManager;
 
 
--(void) initDelegateObject:(id)delegate {
-    _delegate = delegate;
+
+-(id) init {
+    self = [super init];
+    if (!self) return nil;
+    
+    _observers = [[NSMutableArray alloc] init];
     
     _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
     _locationManager.delegate = self; // we set the delegate of locationManager to self.
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    
+    return self;
 }
+
 
 
 -(void) startLocationSensing {
@@ -58,7 +65,6 @@
  */
 -(void) calculateDistanceLeft {
     
-    
 }
 
 
@@ -66,5 +72,8 @@
     return @"mile(s)";
 }
 
+-(NSString *) getTypeTitle {
+    return @"Distance";
+}
 
 @end

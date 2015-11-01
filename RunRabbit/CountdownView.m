@@ -31,18 +31,16 @@
     
     self.frame = CGRectMake( xCoord, yCoord, self.frame.size.width, self.frame.size.height );
     
-    _dataProcessor = [DataProcessorFactory createDataProcessorByMeasurementType:quantityType];
+    _dataProcessor = [DataProcessorFactory createDataProcessorByMeasurementType:quantityType withDelegate:self];
     
-    _quantityTypeLabel.text = [_dataProcessor getUnitOfMeasurement];
+    _quantityTypeLabel.text = [_dataProcessor getTypeTitle];
 }
 
 
 
 
--(void) setCountdownValue:(double)countdownValue {
-    NSString *finalString = [NSString stringWithFormat:@"%g %@",countdownValue,_unitOfMeasurement];
-    
-    _amountLeftLabel.text = finalString;
+-(void) updateValue:(id)value {
+    _amountLeftLabel.text = [NSString stringWithFormat:@"%g %@",[value doubleValue],_unitOfMeasurement];
 }
 
 

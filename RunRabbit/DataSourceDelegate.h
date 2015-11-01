@@ -11,6 +11,17 @@
 
 @protocol DataSourceDelegate
 
+-(void) startUpdatingData;
+
+-(void) stopUpdatingData;
+
+-(void) addObserver:(id)delegate;
+
 -(NSString *) getUnitOfMeasurement;
+
+/* 
+ * Show the type title
+ */
+-(NSString *) getTypeTitle;
 
 @end
