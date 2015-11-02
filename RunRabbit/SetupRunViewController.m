@@ -54,7 +54,7 @@
         
         selectedRow = [self.timePicker selectedRowInComponent:0];
         NSString *timeValueAsString = [[self.timeChoices objectAtIndex:selectedRow] componentsSeparatedByString:@" "][0];
-        vc.timeLeft = [timeValueAsString doubleValue];
+        vc.timeLeft = [timeValueAsString doubleValue] * 60.0; //need to times 60 because timeValueAsString is in minutes
     }
 }
 

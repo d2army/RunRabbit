@@ -16,6 +16,8 @@
 @implementation ActualRunViewController
 @synthesize distanceLeft = _distanceLeft;
 @synthesize timeLeft = _timeLeft;
+@synthesize timerManager = _timerManager;
+@synthesize locationManager = _locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,20 +26,48 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     //Set up the time and distance labels
+    [self setupTimeDisplay];
     
+    [self setupDistanceDisplay];
+    
+}
 
+
+- (void) setupTimeDisplay {
+    //Set up timer manager
+    NSDictionary *initialDataPacket = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                       [[NSNumber numberWithDouble:_timeLeft] stringValue], @"Countdown_Value",
+                                       [[NSNumber numberWithDouble:_timeLeft] stringValue], @"Countdown_Max",
+                                       nil];
     CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [timeView initialize:_timeLeft OfType:NSTimeType withMeasurementUnit:@"second(s)" withX:18 withY:115];
+    
+    _timerManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSTimeType withDelegate:timeView withInitialDataPacket:initialDataPacket];
+    [timeView initializeWithDataProcessor:_timerManager withX:18 withY:115];
+    
+    [self.view addSubview:timeView];
+    
+}
+
+
+- (void) setupDistanceDisplay {
+    //location
+    NSDictionary *initialDataPacket = [[NSDictionary alloc] initWithObjectsAndKeys:
+                         [[NSNumber numberWithDouble:_distanceLeft] stringValue], @"Countdown_Value",
+                         [[NSNumber numberWithDouble:_distanceLeft] stringValue], @"Countdown_Max",
+                         nil];
     
     CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
-    [distanceView initialize:_distanceLeft OfType:NSDistanceType withMeasurementUnit:@"mile(s)" withX:18 withY:384];
+    
+    _locationManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSDistanceType withDelegate:distanceView withInitialDataPacket:initialDataPacket];
+    
+    [distanceView initializeWithDataProcessor:_locationManager withX:18 withY:384];
     
     
     //add views to house
     [self.view addSubview:distanceView];
-    
-    [self.view addSubview:timeView];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

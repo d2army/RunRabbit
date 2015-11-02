@@ -10,6 +10,8 @@
 
 @protocol DataTargetDelegate
 
+@required
+
 -(void) updateValue:(id)value;
 
 /*

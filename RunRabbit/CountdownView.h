@@ -18,14 +18,11 @@
 @property (strong,nonatomic) IBOutlet UILabel *amountLeftLabel;
 @property (strong,nonatomic) IBOutlet UILabel *quantityTypeLabel;
 @property (strong,nonatomic) IBOutlet UIProgressView *progressBar;
-@property (nonatomic) double countdownValue;
-@property (nonatomic) double countdownMax;
-@property (nonatomic,strong) NSString *unitOfMeasurement;
 @property (nonatomic,strong) id <DataSourceDelegate> dataProcessor;
 
 //delegate object to provide info on
 
-- (void) initialize:(double)countdownValue OfType:(DataProcessorType) quantityType  withMeasurementUnit:(NSString *) unitOfMeasurement withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
+- (void) initializeWithDataProcessor:(id)dataProcessor withX:(NSInteger) xCoord withY:(NSInteger) yCoord ;
 
 - (void) setProgressBarValue:(double)value;
 

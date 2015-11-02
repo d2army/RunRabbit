@@ -9,12 +9,12 @@
 #import "LocationManager.h"
 
 @implementation LocationManager
-@synthesize latitude = _latitude;
-@synthesize longitude = _longitude;
-@synthesize altitude = _altitude;
-@synthesize speed = _speed;
+@synthesize curLocation = _curLocation;
+@synthesize prevLocation = _prevLocation;
 @synthesize observers = _observers;
 @synthesize locationManager = _locationManager;
+@synthesize countdownValue = _countdownValue;
+@synthesize countdownMax = _countdownMax;
 
 
 
@@ -24,29 +24,64 @@
     
     _observers = [[NSMutableArray alloc] init];
     
+    _prevLocation = nil;
+    
     return self;
 }
 
 -(void) startUpdatingData {
-    _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    _locationManager = [[CLLocationManager alloc] init]; // initializing locationManager
     _locationManager.delegate = self; // we set the delegate of locationManager to self.
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    
+    [self startLocationSensing];
+}
+
+-(void) stopUpdatingData {
+    [self stopLocationSensing];
+    _prevLocation = nil;
 }
 
 -(void) initializeData:(NSDictionary *)dataPacket {
-    
+    _countdownMax = [[dataPacket valueForKey:@"Countdown_Max"] doubleValue];
+    _countdownValue = [[dataPacket valueForKey:@"Countdown_Value"] doubleValue];
 }
 
 -(void) addObserver:(id)delegate {
     [_observers addObject:delegate];
 }
 
+-(void) notifyObserversOfNewEvent:(double)countdownValue {
+    for (id observer in _observers) {
+        [observer updateValue:[NSNumber numberWithDouble:countdownValue]];
+    }
+}
+
+-(void) notifyObserversCompletion {
+    for (id observer in _observers) {
+        [observer completedUpdate];
+    }
+}
+
 -(void) startLocationSensing {
-    [_locationManager startUpdatingLocation];  //requesting location updates
+    
+    if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [_locationManager requestWhenInUseAuthorization];
+        //[_locationManager startUpdatingLocation];
+    } else {
+        [_locationManager startUpdatingLocation];
+    }
 }
 
 -(void) stopLocationSensing {
-    [_locationManager stopUpdatingLocation];  //requesting location updates
+    [_locationManager stopUpdatingLocation];
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [_locationManager startUpdatingLocation];
+    }
 }
 
 
@@ -59,20 +94,37 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLLocation *crnLoc = [locations lastObject];
-    _latitude = (double)crnLoc.coordinate.latitude;
-    _longitude = (double)crnLoc.coordinate.longitude;
-    _altitude = (double)crnLoc.altitude;
-    _speed = (double)crnLoc.speed;
+    _curLocation = [locations lastObject];
+
     
-    [self calculateDistanceLeft];
+    //if this is the first data point, no calculation
+    if (_prevLocation != nil) {
+            [self calculateDistanceLeft];
+    }
+    _prevLocation = _curLocation;
+}
+
+
+- (void)didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    NSLog(@"Got caught in old < IOS 6");
 }
 
 /*
  * Here, this function figures out how much distance is left and if there is a new distance value
  */
 -(void) calculateDistanceLeft {
+    //NSLog(@"Running at speed : %f m/s" , _speed);
+    double incrementalDistanceIncreaseMiles = [_curLocation distanceFromLocation:_prevLocation] * 0.00062137;
+    _countdownValue -= incrementalDistanceIncreaseMiles;
     
+    if (_countdownValue  > 0.0) {
+        //let observers know
+        [self notifyObserversOfNewEvent:_countdownValue];
+    } else {
+        //stop location
+        [self stopLocationSensing];
+        [self notifyObserversCompletion];
+    }
 }
 
 
@@ -84,4 +136,11 @@
     return @"Distance";
 }
 
+-(NSString *) getFormatForDisplay {
+    return @"%.02g %@";
+}
+
+-(double) getMax {
+    return _countdownMax;
+}
 @end

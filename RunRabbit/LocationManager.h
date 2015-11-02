@@ -13,18 +13,28 @@
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate,DataSourceDelegate>
 
-@property (nonatomic) double latitude;
-@property (nonatomic) double longitude;
-@property (nonatomic) double altitude;
-@property (nonatomic) double speed;
-@property CLLocationManager *locationManager;
+@property (nonatomic) double distanceSoFar;
+@property (nonatomic, strong) CLLocation *prevLocation;
+@property (nonatomic, strong) CLLocation *curLocation;
+
+@property (nonatomic) double countdownMax;
+@property (nonatomic) double countdownValue;
+
+@property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) NSMutableArray *observers;
 
 -(id) init;
 
--(void) startLocationSensing;
+/*
+ * Part of CLLocationManagerDelegate
+ */
 
--(void) stopLocationSensing;
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error;
+
+-(void)didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
+
 
 /*
  * Part of DataSourceDelegate protocol
@@ -40,5 +50,7 @@
 -(NSString *) getUnitOfMeasurement;
 
 -(NSString *) getTypeTitle;
+
+-(double) getMax;
 
 @end

@@ -34,4 +34,6 @@
 
 -(NSString *) getTypeTitle;
 
+-(double) getMax;
+
 @end

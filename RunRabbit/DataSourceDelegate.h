@@ -11,6 +11,8 @@
 
 @protocol DataSourceDelegate
 
+@required
+
 -(void) startUpdatingData;
 
 -(void) stopUpdatingData;
@@ -22,11 +24,15 @@
 
 -(void) addObserver:(id)delegate;
 
+-(double) getMax;
+
 -(NSString *) getUnitOfMeasurement;
 
 /* 
  * Show the type title
  */
 -(NSString *) getTypeTitle;
+
+-(NSString *) getFormatForDisplay;
 
 @end

@@ -49,6 +49,11 @@
     [self setupCounter];
 }
 
+-(void) stopUpdatingData {
+    [_countdownTimer invalidate];
+    _countdownTimer = nil;
+}
+
 /*
  * format the value properly
  */
@@ -78,7 +83,7 @@
 }
 
 -(NSString *) getUnitOfMeasurement {
-    return @"second(s)";
+    return @"s";
 }
 
 
@@ -86,5 +91,12 @@
     return @"Time";
 }
 
+-(NSString *) getFormatForDisplay {
+    return @"%g %@";
+}
+
+-(double) getMax {
+    return _countdownMax;
+}
 
 @end
