@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) NSTimer *countdownTimer;
 @property (nonatomic) double countdownValue;
+@property (nonatomic) double countdownMax;
 @property (nonatomic,strong) NSMutableArray *observers;
 
 -(id) init;
@@ -21,6 +22,8 @@
 /*
  * Part of DataSourceDelegate protocol
  */
+-(void) initializeData:(NSDictionary *)dataPacket;
+
 -(void) startUpdatingData;
 
 -(void) stopUpdatingData;

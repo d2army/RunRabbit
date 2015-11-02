@@ -31,9 +31,19 @@
     
     self.frame = CGRectMake( xCoord, yCoord, self.frame.size.width, self.frame.size.height );
     
-    _dataProcessor = [DataProcessorFactory createDataProcessorByMeasurementType:quantityType withDelegate:self];
+    /*
+     * Initial data
+     */
+    NSDictionary *initialDataPacket = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                            [[NSNumber numberWithDouble:_countdownValue] stringValue], @"Countdown_Value",
+                                            [[NSNumber numberWithDouble:_countdownValue] stringValue], @"Countdown_Max",
+                                            nil];
+    
+    _dataProcessor = [DataProcessorFactory createDataProcessorByMeasurementType:quantityType withDelegate:self withInitialDataPacket:initialDataPacket];
     
     _quantityTypeLabel.text = [_dataProcessor getTypeTitle];
+    
+    [_dataProcessor startUpdatingData];
 }
 
 
@@ -43,6 +53,9 @@
     _amountLeftLabel.text = [NSString stringWithFormat:@"%g %@",[value doubleValue],_unitOfMeasurement];
 }
 
+-(void) completedUpdate {
+    _amountLeftLabel.text = @"Completed!";
+}
 
 -(void) setProgressBarValue:(double) countdownValue {
     //set progress bar

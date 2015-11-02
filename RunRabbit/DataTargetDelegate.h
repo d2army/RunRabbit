@@ -12,4 +12,9 @@
 
 -(void) updateValue:(id)value;
 
+/*
+ * Inform target updating of data has ended
+ */
+-(void) completedUpdate;
+
 @end

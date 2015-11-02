@@ -11,6 +11,7 @@
 @implementation TimerManager
 @synthesize countdownTimer = _countdownTimer;
 @synthesize countdownValue = _countdownValue;
+@synthesize countdownMax = _countdownMax;
 @synthesize observers = _observers;
 
 
@@ -19,24 +20,32 @@
     if (!self) return nil;
     
     _observers = [[NSMutableArray alloc] init];
-    
     return self;
 }
 
 
-
 -(void) addObserver:(id)delegate {
     [_observers addObject:delegate];
-
 }
 
--(void) notifyObservers:(double)countdownValue {
+-(void) notifyObserversOfNewEvent:(double)countdownValue {
     for (id observer in _observers) {
-        [observer updateValue:countdownValue];
+        [observer updateValue:[NSNumber numberWithDouble:countdownValue]];
     }
 }
 
--(void) starUpdatingData {
+-(void) notifyObserversCompletion {
+    for (id observer in _observers) {
+        [observer completedUpdate];
+    }
+}
+
+-(void) initializeData:(NSDictionary *)dataPacket {
+    _countdownMax = [[dataPacket valueForKey:@"Countdown_Max"] doubleValue];
+    _countdownValue = [[dataPacket valueForKey:@"Countdown_Value"] doubleValue];
+}
+
+-(void) startUpdatingData {
     [self setupCounter];
 }
 
@@ -44,7 +53,6 @@
  * format the value properly
  */
 - (void) setupCounter {
-    
     //set up the count down timer
     _countdownTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0
                                                        target: self
@@ -60,11 +68,12 @@
     if (_countdownValue > 0) {
         //update the countdown
         _countdownValue -= 1.0;
-        [self notifyObservers:_countdownValue];
+        [self notifyObserversOfNewEvent:_countdownValue];
     } else {
         //stop timer
         [_countdownTimer invalidate];
         _countdownTimer = nil;
+        [self notifyObserversCompletion];
     }
 }
 

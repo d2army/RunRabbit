@@ -15,6 +15,11 @@
 
 -(void) stopUpdatingData;
 
+/*
+ * Set up initial data
+ */
+-(void) initializeData:(NSDictionary *)dataPacket;
+
 -(void) addObserver:(id)delegate;
 
 -(NSString *) getUnitOfMeasurement;

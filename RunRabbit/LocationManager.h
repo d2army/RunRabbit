@@ -20,6 +20,8 @@
 @property CLLocationManager *locationManager;
 @property (nonatomic,strong) NSMutableArray *observers;
 
+-(id) init;
+
 -(void) startLocationSensing;
 
 -(void) stopLocationSensing;
@@ -27,8 +29,7 @@
 /*
  * Part of DataSourceDelegate protocol
  */
-
--(id) init;
+-(void) initializeData:(NSDictionary *)dataPacket;
 
 -(void) startUpdatingData;
 

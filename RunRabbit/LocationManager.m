@@ -24,14 +24,22 @@
     
     _observers = [[NSMutableArray alloc] init];
     
-    _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
-    _locationManager.delegate = self; // we set the delegate of locationManager to self.
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
-    
     return self;
 }
 
+-(void) startUpdatingData {
+    _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    _locationManager.delegate = self; // we set the delegate of locationManager to self.
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+}
 
+-(void) initializeData:(NSDictionary *)dataPacket {
+    
+}
+
+-(void) addObserver:(id)delegate {
+    [_observers addObject:delegate];
+}
 
 -(void) startLocationSensing {
     [_locationManager startUpdatingLocation];  //requesting location updates
