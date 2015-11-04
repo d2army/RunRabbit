@@ -13,17 +13,15 @@
 @implementation DataProcessorFactory
 
 
-+ (id)createDataProcessorByMeasurementType:(DataProcessorType)type withDelegate:(id) delegate withInitialDataPacket:(NSDictionary *) initialDataPacket{
++ (id)createDataProcessorByMeasurementType:(DataProcessorType)type withInitialDataPacket:(NSDictionary *) initialDataPacket{
     if (type == NSDistanceType) {
             
         LocationManager *item = [[LocationManager alloc] init];
-        [item addObserver:delegate];
         [item initializeData:initialDataPacket];
         
         return item;
     } else if (type == NSTimeType) {
         TimerManager * item = [[TimerManager alloc] init];
-        [item addObserver:delegate];
         [item initializeData:initialDataPacket];
         
         return item;

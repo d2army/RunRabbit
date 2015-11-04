@@ -51,9 +51,9 @@
     [_observers addObject:delegate];
 }
 
--(void) notifyObserversOfNewEvent:(double)countdownValue {
+-(void) notifyObserversOfNewEvent:(struct LocationDataPacket *)packet {
     for (id observer in _observers) {
-        [observer updateValue:[NSNumber numberWithDouble:countdownValue]];
+        [observer updateValue:(__bridge id)(packet)];
     }
 }
 
@@ -99,7 +99,7 @@
     
     //if this is the first data point, no calculation
     if (_prevLocation != nil) {
-            [self calculateDistanceLeft];
+            [self processNewLocation];
     }
     _prevLocation = _curLocation;
 }
@@ -112,14 +112,20 @@
 /*
  * Here, this function figures out how much distance is left and if there is a new distance value
  */
--(void) calculateDistanceLeft {
+-(void) processNewLocation {
     //NSLog(@"Running at speed : %f m/s" , _speed);
     double incrementalDistanceIncreaseMiles = [_curLocation distanceFromLocation:_prevLocation] * 0.00062137;
     _countdownValue -= incrementalDistanceIncreaseMiles;
     
     if (_countdownValue  > 0.0) {
         //let observers know
-        [self notifyObserversOfNewEvent:_countdownValue];
+        
+        //update packet
+        struct LocationDataPacket packet;
+        packet.distanceLeft = _countdownValue;
+        packet.speed = _curLocation.speed;
+        
+        [self notifyObserversOfNewEvent:&packet];
     } else {
         //stop location
         [self stopLocationSensing];

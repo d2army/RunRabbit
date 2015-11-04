@@ -29,6 +29,6 @@
 //Protocol methods to be implemented
 - (void) updateValue:(id)countdownValue;
 
--(void) completedUpdate;
+- (void) completedUpdate;
 
 @end

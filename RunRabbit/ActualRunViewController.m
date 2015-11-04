@@ -30,6 +30,7 @@
     
     [self setupDistanceDisplay];
     
+    [self setupNotficationDisplay];
 }
 
 
@@ -41,15 +42,16 @@
                                        nil];
     CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
     
-    _timerManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSTimeType withDelegate:timeView withInitialDataPacket:initialDataPacket];
-    [timeView initializeWithDataProcessor:_timerManager withX:18 withY:115];
+    _timerManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSTimeType withInitialDataPacket:initialDataPacket];
+    [_timerManager addObserver:timeView];
+    [timeView initializeWithDataProcessor:_timerManager withX:18 withY:100];
     
     [self.view addSubview:timeView];
     
 }
 
 
-- (void) setupDistanceDisplay {
+- (void) setupDistanceDisplayNotificationDisplay {
     //location
     NSDictionary *initialDataPacket = [[NSDictionary alloc] initWithObjectsAndKeys:
                          [[NSNumber numberWithDouble:_distanceLeft] stringValue], @"Countdown_Value",
@@ -58,15 +60,28 @@
     
     CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
     
-    _locationManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSDistanceType withDelegate:distanceView withInitialDataPacket:initialDataPacket];
-    
-    [distanceView initializeWithDataProcessor:_locationManager withX:18 withY:384];
+    _locationManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSDistanceType  withInitialDataPacket:initialDataPacket];
+    [_locationManager addObserver:distanceView];
+    [distanceView initializeWithDataProcessor:_locationManager withX:18 withY:200];
     
     
     //add views to house
     [self.view addSubview:distanceView];
+    
+    UILabel * notificationMessage = [[UILabel alloc] initWithFrame:CGRectMake(0,500,CGRectGetWidth(self.view.frame),50)];
+                                                                              
+    [notificationMessage setText:@"Going good!"];
+    [notificationMessage setFont:[UIFont systemFontOfSize:36]];
+    [notificationMessage setTextAlignment:NSTextAlignmentCenter] ;
+    [self.view addSubview:notificationMessage];
+    
+    [_locationManager addObserver:notificationMessage];
 }
 
+
+- (void) setupNotficationDisplay {
+
+}
 
 
 - (void)didReceiveMemoryWarning {

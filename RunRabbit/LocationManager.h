@@ -10,6 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DataTargetDelegate.h"
 #import "DataSourceDelegate.h"
+#import "LocationDataPacket.h"
+
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate,DataSourceDelegate>
 

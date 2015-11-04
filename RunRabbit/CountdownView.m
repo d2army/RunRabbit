@@ -7,6 +7,7 @@
 //
 
 #import "CountdownView.h"
+#import "LocationDataPacket.h"
 
 @implementation CountdownView
 
@@ -38,7 +39,8 @@
 
 
 -(void) updateValue:(id)value {
-    double finalValue = [value doubleValue];
+    struct LocationDataPacket *packet = (struct LocationDataPacket *) packet;
+    double finalValue = packet->distanceLeft;
     
     _amountLeftLabel.text = [NSString stringWithFormat:[_dataProcessor getFormatForDisplay],finalValue,[_dataProcessor getUnitOfMeasurement]];
 }
