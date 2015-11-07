@@ -8,6 +8,7 @@
 
 #import "ActualRunViewController.h"
 #import "DataProcessorFactory.h"
+#import "NotificationMessage.h"
 
 @interface ActualRunViewController ()
 
@@ -28,9 +29,7 @@
     //Set up the time and distance labels
     [self setupTimeDisplay];
     
-    [self setupDistanceDisplay];
-    
-    [self setupNotficationDisplay];
+    [self setupDistanceDisplayNotificationDisplay];
 }
 
 
@@ -68,20 +67,14 @@
     //add views to house
     [self.view addSubview:distanceView];
     
-    UILabel * notificationMessage = [[UILabel alloc] initWithFrame:CGRectMake(0,500,CGRectGetWidth(self.view.frame),50)];
-                                                                              
-    [notificationMessage setText:@"Going good!"];
-    [notificationMessage setFont:[UIFont systemFontOfSize:36]];
-    [notificationMessage setTextAlignment:NSTextAlignmentCenter] ;
+    NotificationMessage * notificationMessage = [[NotificationMessage alloc] initWithFrame:CGRectMake(0,500,CGRectGetWidth(self.view.frame),50)];
+
     [self.view addSubview:notificationMessage];
     
     [_locationManager addObserver:notificationMessage];
 }
 
 
-- (void) setupNotficationDisplay {
-
-}
 
 
 - (void)didReceiveMemoryWarning {

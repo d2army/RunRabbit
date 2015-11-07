@@ -51,9 +51,9 @@
     [_observers addObject:delegate];
 }
 
--(void) notifyObserversOfNewEvent:(struct LocationDataPacket *)packet {
+-(void) notifyObserversOfNewEvent:(LocationDataPacket *)packet {
     for (id observer in _observers) {
-        [observer updateValue:(__bridge id)(packet)];
+        [observer updateValue:(id)(packet)];
     }
 }
 
@@ -121,11 +121,11 @@
         //let observers know
         
         //update packet
-        struct LocationDataPacket packet;
+        LocationDataPacket *packet = [[LocationDataPacket alloc] init];
         packet.distanceLeft = _countdownValue;
         packet.speed = _curLocation.speed;
         
-        [self notifyObserversOfNewEvent:&packet];
+        [self notifyObserversOfNewEvent:packet];
     } else {
         //stop location
         [self stopLocationSensing];

@@ -6,13 +6,11 @@
 //  Copyright © 2015 Ian Yap. All rights reserved.
 //
 
-#ifndef LocationDataPacket_h
-#define LocationDataPacket_h
+#import <Foundation/Foundation.h>
 
+@interface LocationDataPacket : NSObject
+@property (nonatomic) double distanceLeft;
+@property (nonatomic) double speed;
 
-struct LocationDataPacket {
-    double distanceLeft;
-    double speed;
-};
+@end
 
-#endif /* LocationDataPacket_h */

@@ -39,8 +39,8 @@
 
 
 -(void) updateValue:(id)value {
-    struct LocationDataPacket *packet = (struct LocationDataPacket *) packet;
-    double finalValue = packet->distanceLeft;
+    LocationDataPacket *packet = (LocationDataPacket *) packet;
+    double finalValue = packet.distanceLeft;
     
     _amountLeftLabel.text = [NSString stringWithFormat:[_dataProcessor getFormatForDisplay],finalValue,[_dataProcessor getUnitOfMeasurement]];
 }

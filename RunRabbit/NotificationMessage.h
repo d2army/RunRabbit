@@ -11,8 +11,6 @@
 
 
 @interface NotificationMessage : UIView <DataTargetDelegate>
-
-
 @property (strong,nonatomic) IBOutlet UILabel *notification;
 
 

@@ -7,14 +7,20 @@
 //
 
 #import "NotificationMessage.h"
+#import "LocationDataPacket.h"
 
 @implementation NotificationMessage
-
+@synthesize notification = _notification;
 
 -(void) updateValue:(id)value {
-    struct LocationDataPacket *packet = (struct LocationDataPacket *) packet;
-    double finalValue = packet->distanceLeft;
+    LocationDataPacket *packet = (LocationDataPacket *) value;
+    double speed = packet.speed;
     
-    _amountLeftLabel.text = [NSString stringWithFormat:[_dataProcessor getFormatForDisplay],finalValue,[_dataProcessor getUnitOfMeasurement]];
+    //do something with the speed
+    _notification.text = [NSString stringWithFormat:@"%.2g m/s", speed];
+}
+
+-(void) completedUpdate {
+    
 }
 @end
