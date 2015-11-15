@@ -36,11 +36,8 @@
 }
 
 
-
-
 -(void) updateValue:(id)value {
-    LocationDataPacket *packet = (LocationDataPacket *) packet;
-    double finalValue = packet.distanceLeft;
+    double finalValue = [value doubleValue];
     
     _amountLeftLabel.text = [NSString stringWithFormat:[_dataProcessor getFormatForDisplay],finalValue,[_dataProcessor getUnitOfMeasurement]];
 }

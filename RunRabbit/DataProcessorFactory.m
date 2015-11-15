@@ -12,19 +12,26 @@
 
 @implementation DataProcessorFactory
 
-
 + (id)createDataProcessorByMeasurementType:(DataProcessorType)type withInitialDataPacket:(NSDictionary *) initialDataPacket{
+    
     if (type == NSDistanceType) {
             
-        LocationManager *item = [[LocationManager alloc] init];
-        [item initializeData:initialDataPacket];
+        LocationManager *manager = [[LocationManager alloc] init];
+        [manager initializeData:initialDataPacket];
         
-        return item;
+        return manager;
+    } else if (type == NSSpeedType) {
+        
+        LocationManager *manager = [[LocationManager alloc] init];
+        [manager initializeData:initialDataPacket];
+        
+        return manager;
     } else if (type == NSTimeType) {
-        TimerManager * item = [[TimerManager alloc] init];
-        [item initializeData:initialDataPacket];
         
-        return item;
+        TimerManager * manager = [[TimerManager alloc] init];
+        [manager initializeData:initialDataPacket];
+        
+        return manager;
     } else {
         return nil;
     }

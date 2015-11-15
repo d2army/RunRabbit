@@ -11,10 +11,12 @@
 @interface DataProcessorFactory : NSObject
 enum {
     NSDistanceType = 1,
-    NSTimeType = 2
+    NSTimeType = 2,
+    NSSpeedType = 3
 };
 typedef NSInteger DataProcessorType;
 
 + (id)createDataProcessorByMeasurementType:(DataProcessorType)type withInitialDataPacket:(NSDictionary *) initialDataPacket;
+
 
 @end

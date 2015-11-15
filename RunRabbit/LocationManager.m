@@ -23,7 +23,6 @@
     if (!self) return nil;
     
     _observers = [[NSMutableArray alloc] init];
-    
     _prevLocation = nil;
     
     return self;
