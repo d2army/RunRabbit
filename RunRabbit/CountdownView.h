@@ -27,7 +27,7 @@
 - (void) setProgressBarValue:(double)value;
 
 //Protocol methods to be implemented
-- (void) updateValue:(id)countdownValue;
+- (void) updateValue:(id)value;
 
 - (void) completedUpdate;
 

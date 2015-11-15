@@ -8,6 +8,8 @@
 
 #import "LocationManager.h"
 
+#import "ObserverComponent.h"
+
 @implementation LocationManager
 @synthesize curLocation = _curLocation;
 @synthesize prevLocation = _prevLocation;
@@ -41,24 +43,33 @@
     _prevLocation = nil;
 }
 
--(void) initializeData:(NSDictionary *)dataPacket {
+-(void) initializeData:(NSDictionary *)dataPacket{
     _countdownMax = [[dataPacket valueForKey:@"Countdown_Max"] doubleValue];
     _countdownValue = [[dataPacket valueForKey:@"Countdown_Value"] doubleValue];
 }
 
--(void) addObserver:(id)delegate {
-    [_observers addObject:delegate];
+-(void) addObserver:(id)delegate forDataType:(DataProcessorType)dataType {
+
+    ObserverComponent *observerComponent = [[ObserverComponent alloc] init];
+    observerComponent.delegate = delegate;
+    observerComponent.dataType = dataType;
+    
+    [_observers addObject:observerComponent];
 }
 
 -(void) notifyObserversOfNewEvent:(LocationDataPacket *)packet {
-    for (id observer in _observers) {
-        [observer updateValue:(id)(packet)];
+    for (ObserverComponent *observerComponent in _observers) {
+        if (observerComponent.dataType == NSDistanceType) {
+            [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.distanceLeft]];
+        } else {
+            [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.speed]];
+        }
     }
 }
 
 -(void) notifyObserversCompletion {
-    for (id observer in _observers) {
-        [observer completedUpdate];
+    for (ObserverComponent *observerComponent in _observers) {
+        [observerComponent.delegate completedUpdate];
     }
 }
 

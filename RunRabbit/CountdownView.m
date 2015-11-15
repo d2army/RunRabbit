@@ -7,7 +7,6 @@
 //
 
 #import "CountdownView.h"
-#import "LocationDataPacket.h"
 
 @implementation CountdownView
 

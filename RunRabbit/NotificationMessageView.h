@@ -10,12 +10,12 @@
 #import "DataTargetDelegate.h"
 
 
-@interface NotificationMessage : UIView <DataTargetDelegate>
+@interface NotificationMessageView : UIView <DataTargetDelegate>
 @property (strong,nonatomic) IBOutlet UILabel *notification;
 
 
 //Protocol methods to be implemented
-- (void) updateValue:(id)countdownValue;
+- (void) updateValue:(id)value;
 
 - (void) completedUpdate;
 

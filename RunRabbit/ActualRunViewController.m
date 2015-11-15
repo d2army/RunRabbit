@@ -8,7 +8,7 @@
 
 #import "ActualRunViewController.h"
 #import "DataProcessorFactory.h"
-#import "NotificationMessage.h"
+#import "NotificationMessageView.h"
 
 @interface ActualRunViewController ()
 
@@ -42,7 +42,7 @@
     CountdownView *timeView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
     
     _timerManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSTimeType withInitialDataPacket:initialDataPacket];
-    [_timerManager addObserver:timeView];
+    [_timerManager addObserver:timeView forDataType:NSTimeType];
     [timeView initializeWithDataProcessor:_timerManager withX:18 withY:100];
     
     [self.view addSubview:timeView];
@@ -60,18 +60,20 @@
     CountdownView *distanceView = [[[NSBundle mainBundle] loadNibNamed:@"CountdownView" owner:self options:nil] lastObject];
     
     _locationManager = [DataProcessorFactory createDataProcessorByMeasurementType:NSDistanceType  withInitialDataPacket:initialDataPacket];
-    [_locationManager addObserver:distanceView];
+    [_locationManager addObserver:distanceView forDataType:NSDistanceType];
     [distanceView initializeWithDataProcessor:_locationManager withX:18 withY:200];
     
     
     //add views to house
     [self.view addSubview:distanceView];
     
-    NotificationMessage * notificationMessage = [[NotificationMessage alloc] initWithFrame:CGRectMake(0,500,CGRectGetWidth(self.view.frame),50)];
-
-    [self.view addSubview:notificationMessage];
+    NotificationMessageView *notificationMessageView = [[[NSBundle mainBundle] loadNibNamed:@"NotificationMessageView" owner:self options:nil] lastObject];
     
-    [_locationManager addObserver:notificationMessage];
+    [notificationMessageView setFrame:CGRectMake(0,500,CGRectGetWidth(self.view.frame),50)];
+    
+    [self.view addSubview:notificationMessageView];
+    
+    [_locationManager addObserver:notificationMessageView forDataType:NSSpeedType];
 }
 
 

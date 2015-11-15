@@ -107,7 +107,20 @@
                     <view key="view" contentMode="scaleToFill" id="QOc-ee-xcj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Running-Rabbit-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fg2-id-les">
+                                <rect key="frame" x="154" y="36" width="67" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="9mu-ON-qLz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fg2-id-les" firstAttribute="centerX" secondItem="QOc-ee-xcj" secondAttribute="centerX" id="GPJ-L9-dCF"/>
+                            <constraint firstItem="rb7-8R-oL0" firstAttribute="top" secondItem="Fg2-id-les" secondAttribute="bottom" constant="569" id="hV6-7V-P0m"/>
+                            <constraint firstItem="Fg2-id-les" firstAttribute="top" secondItem="BZ5-NZ-KIi" secondAttribute="bottom" constant="16" id="m9u-29-cPK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEK-tX-Jbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,6 +189,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Running-Rabbit-icon.png" width="256" height="256"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

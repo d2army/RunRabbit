@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DataProcessorFactory.h"
 
 @protocol DataSourceDelegate
 
@@ -22,7 +22,10 @@
  */
 -(void) initializeData:(NSDictionary *)dataPacket;
 
--(void) addObserver:(id)delegate;
+/*
+ * Adding an observing delegate and the data type
+ */
+-(void) addObserver:(id)delegate forDataType:(DataProcessorType)dataType;
 
 -(double) getMax;
 
