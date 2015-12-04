@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DataProcessorFactory.h"
-#import "EventDataTypeDefinition.h"
+#import "StateTypeDefinition.h"
 
-@protocol DataSourceDelegate
+@protocol StateSourceDelegate
 
 @required
 

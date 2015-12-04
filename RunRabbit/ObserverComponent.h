@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DataProcessorFactory.h"
+#import "EventDataTypeDefinition.h"
 
 @interface ObserverComponent : NSObject
 @property (nonatomic,strong) id delegate;
-@property (nonatomic) DataProcessorType dataType;
+@property (nonatomic) EventDataType dataType;
 @end

@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C26FE101BC99DA800F2D5FB /* ActualRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26FE0F1BC99DA800F2D5FB /* ActualRunViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3C26FE161BC9CC0600F2D5FB /* RunningRabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE151BC9CC0600F2D5FB /* RunningRabbit.png */; settings = {ASSET_TAGS = (); }; };
-		3C26FE181BC9D4C800F2D5FB /* Running-Rabbit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE171BC9D4C800F2D5FB /* Running-Rabbit-icon.png */; settings = {ASSET_TAGS = (); }; };
-		3C26FE1A1BCE072000F2D5FB /* poo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE191BCE072000F2D5FB /* poo.jpg */; settings = {ASSET_TAGS = (); }; };
-		3C26FE201BCE121500F2D5FB /* CountdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26FE1F1BCE121500F2D5FB /* CountdownView.m */; settings = {ASSET_TAGS = (); }; };
-		3C26FE231BCE151900F2D5FB /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE221BCE151900F2D5FB /* CountdownView.xib */; settings = {ASSET_TAGS = (); }; };
-		3C72C2071BF8641800A8BB61 /* ObserverComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C72C2061BF8641800A8BB61 /* ObserverComponent.m */; settings = {ASSET_TAGS = (); }; };
-		3CBD149A1BD767C500B6B5C7 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14991BD767C500B6B5C7 /* LocationManager.m */; settings = {ASSET_TAGS = (); }; };
+		3C26FE101BC99DA800F2D5FB /* ActualRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26FE0F1BC99DA800F2D5FB /* ActualRunViewController.m */; };
+		3C26FE161BC9CC0600F2D5FB /* RunningRabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE151BC9CC0600F2D5FB /* RunningRabbit.png */; };
+		3C26FE181BC9D4C800F2D5FB /* Running-Rabbit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE171BC9D4C800F2D5FB /* Running-Rabbit-icon.png */; };
+		3C26FE1A1BCE072000F2D5FB /* poo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE191BCE072000F2D5FB /* poo.jpg */; };
+		3C26FE201BCE121500F2D5FB /* CountdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26FE1F1BCE121500F2D5FB /* CountdownView.m */; };
+		3C26FE231BCE151900F2D5FB /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C26FE221BCE151900F2D5FB /* CountdownView.xib */; };
+		3C272F271C016497000977D1 /* StateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C272F261C016497000977D1 /* StateManager.m */; };
+		3C272F2A1C028E03000977D1 /* StateTypeDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C272F291C028E03000977D1 /* StateTypeDefinition.m */; };
+		3C272F2D1C028E94000977D1 /* EventDataTypeDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C272F2C1C028E94000977D1 /* EventDataTypeDefinition.m */; };
+		3C72C2071BF8641800A8BB61 /* ObserverComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C72C2061BF8641800A8BB61 /* ObserverComponent.m */; };
+		3CBD149A1BD767C500B6B5C7 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14991BD767C500B6B5C7 /* LocationManager.m */; };
 		3CBD149C1BD76AC600B6B5C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBD149B1BD76AC600B6B5C7 /* CoreLocation.framework */; };
-		3CBD149F1BD8995D00B6B5C7 /* TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */; settings = {ASSET_TAGS = (); }; };
-		3CBD14A31BDDB8D300B6B5C7 /* DataProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14A21BDDB8D300B6B5C7 /* DataProcessorFactory.m */; settings = {ASSET_TAGS = (); }; };
-		3CBD14A81BE9C71700B6B5C7 /* NotificationMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD14A71BE9C71700B6B5C7 /* NotificationMessageView.xib */; settings = {ASSET_TAGS = (); }; };
-		3CBD14AB1BE9C75700B6B5C7 /* NotificationMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14AA1BE9C75700B6B5C7 /* NotificationMessageView.m */; settings = {ASSET_TAGS = (); }; };
-		3CBD14AD1BEDDE8600B6B5C7 /* LocationDataPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14AC1BEDDE8600B6B5C7 /* LocationDataPacket.m */; settings = {ASSET_TAGS = (); }; };
+		3CBD149F1BD8995D00B6B5C7 /* TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD149E1BD8995D00B6B5C7 /* TimerManager.m */; };
+		3CBD14A31BDDB8D300B6B5C7 /* DataProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14A21BDDB8D300B6B5C7 /* DataProcessorFactory.m */; };
+		3CBD14A81BE9C71700B6B5C7 /* NotificationMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD14A71BE9C71700B6B5C7 /* NotificationMessageView.xib */; };
+		3CBD14AB1BE9C75700B6B5C7 /* NotificationMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14AA1BE9C75700B6B5C7 /* NotificationMessageView.m */; };
+		3CBD14AD1BEDDE8600B6B5C7 /* LocationDataPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD14AC1BEDDE8600B6B5C7 /* LocationDataPacket.m */; };
 		3CD7BC641B91762F00648A47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC631B91762F00648A47 /* main.m */; };
 		3CD7BC671B91762F00648A47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC661B91762F00648A47 /* AppDelegate.m */; };
 		3CD7BC6A1B91762F00648A47 /* SetupRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7BC691B91762F00648A47 /* SetupRunViewController.m */; };
@@ -50,6 +53,14 @@
 		3C26FE1E1BCE121500F2D5FB /* CountdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownView.h; sourceTree = "<group>"; };
 		3C26FE1F1BCE121500F2D5FB /* CountdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownView.m; sourceTree = "<group>"; };
 		3C26FE221BCE151900F2D5FB /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
+		3C272F251C016497000977D1 /* StateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateManager.h; sourceTree = "<group>"; };
+		3C272F261C016497000977D1 /* StateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateManager.m; sourceTree = "<group>"; };
+		3C272F281C028E03000977D1 /* StateTypeDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTypeDefinition.h; sourceTree = "<group>"; };
+		3C272F291C028E03000977D1 /* StateTypeDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateTypeDefinition.m; sourceTree = "<group>"; };
+		3C272F2B1C028E94000977D1 /* EventDataTypeDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataTypeDefinition.h; sourceTree = "<group>"; };
+		3C272F2C1C028E94000977D1 /* EventDataTypeDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataTypeDefinition.m; sourceTree = "<group>"; };
+		3C272F2E1C029F70000977D1 /* StateTargetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTargetDelegate.h; sourceTree = "<group>"; };
+		3C272F2F1C029F7D000977D1 /* StateSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateSourceDelegate.h; sourceTree = "<group>"; };
 		3C72C2051BF8641800A8BB61 /* ObserverComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverComponent.h; sourceTree = "<group>"; };
 		3C72C2061BF8641800A8BB61 /* ObserverComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObserverComponent.m; sourceTree = "<group>"; };
 		3CBD14981BD767C500B6B5C7 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
@@ -129,6 +140,12 @@
 				3CBD14AC1BEDDE8600B6B5C7 /* LocationDataPacket.m */,
 				3C72C2051BF8641800A8BB61 /* ObserverComponent.h */,
 				3C72C2061BF8641800A8BB61 /* ObserverComponent.m */,
+				3C272F251C016497000977D1 /* StateManager.h */,
+				3C272F261C016497000977D1 /* StateManager.m */,
+				3C272F281C028E03000977D1 /* StateTypeDefinition.h */,
+				3C272F291C028E03000977D1 /* StateTypeDefinition.m */,
+				3C272F2B1C028E94000977D1 /* EventDataTypeDefinition.h */,
+				3C272F2C1C028E94000977D1 /* EventDataTypeDefinition.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -154,11 +171,29 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		3CBD14A41BE570BA00B6B5C7 /* Protocols */ = {
+		3C272F301C029F81000977D1 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3C272F2E1C029F70000977D1 /* StateTargetDelegate.h */,
+				3C272F2F1C029F7D000977D1 /* StateSourceDelegate.h */,
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		3C272F311C029F89000977D1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				3CBD14A01BD9E75100B6B5C7 /* DataTargetDelegate.h */,
 				3CBD14A51BE5715E00B6B5C7 /* DataSourceDelegate.h */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		3CBD14A41BE570BA00B6B5C7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3C272F311C029F89000977D1 /* Data */,
+				3C272F301C029F81000977D1 /* State */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -334,6 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CBD14AB1BE9C75700B6B5C7 /* NotificationMessageView.m in Sources */,
+				3C272F271C016497000977D1 /* StateManager.m in Sources */,
+				3C272F2D1C028E94000977D1 /* EventDataTypeDefinition.m in Sources */,
 				3C72C2071BF8641800A8BB61 /* ObserverComponent.m in Sources */,
 				3CBD14A31BDDB8D300B6B5C7 /* DataProcessorFactory.m in Sources */,
 				3CD7BC6D1B91762F00648A47 /* HistoryViewController.m in Sources */,
@@ -344,6 +381,7 @@
 				3CBD14AD1BEDDE8600B6B5C7 /* LocationDataPacket.m in Sources */,
 				3CBD149F1BD8995D00B6B5C7 /* TimerManager.m in Sources */,
 				3CD7BC641B91762F00648A47 /* main.m in Sources */,
+				3C272F2A1C028E03000977D1 /* StateTypeDefinition.m in Sources */,
 				3C26FE101BC99DA800F2D5FB /* ActualRunViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

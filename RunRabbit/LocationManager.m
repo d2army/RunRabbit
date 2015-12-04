@@ -48,7 +48,7 @@
     _countdownValue = [[dataPacket valueForKey:@"Countdown_Value"] doubleValue];
 }
 
--(void) addObserver:(id)delegate forDataType:(DataProcessorType)dataType {
+-(void) addObserver:(id)delegate forDataType:(EventDataType)dataType {
 
     ObserverComponent *observerComponent = [[ObserverComponent alloc] init];
     observerComponent.delegate = delegate;
@@ -59,7 +59,7 @@
 
 -(void) notifyObserversOfNewEvent:(LocationDataPacket *)packet {
     for (ObserverComponent *observerComponent in _observers) {
-        if (observerComponent.dataType == NSDistanceType) {
+        if (observerComponent.dataType == DISTANCE_TYPE) {
             [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.distanceLeft]];
         } else {
             [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.speed]];

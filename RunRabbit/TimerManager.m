@@ -24,7 +24,7 @@
 }
 
 
--(void) addObserver:(id)delegate forDataType:(DataProcessorType)dataType {
+-(void) addObserver:(id)delegate forDataType:(EventDataType)dataType {
     [_observers addObject:delegate];
 }
 

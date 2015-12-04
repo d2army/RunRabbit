@@ -7,16 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StateTypeDefinition.h"
+#import "EventDataTypeDefinition.h"
 
 @interface DataProcessorFactory : NSObject
-enum {
-    NSDistanceType = 1,
-    NSTimeType = 2,
-    NSSpeedType = 3
-};
-typedef NSInteger DataProcessorType;
-
-+ (id)createDataProcessorByMeasurementType:(DataProcessorType)type withInitialDataPacket:(NSDictionary *) initialDataPacket;
-
++ (id)createDataProcessorByMeasurementType:(EventDataType)type withInitialDataPacket:(NSDictionary *) initialDataPacket;
 
 @end

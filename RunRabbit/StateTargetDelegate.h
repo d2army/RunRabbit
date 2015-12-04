@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EventDataTypeDefinition.h"
+#import "StateTypeDefinition.h"
 
 @protocol DataTargetDelegate
 

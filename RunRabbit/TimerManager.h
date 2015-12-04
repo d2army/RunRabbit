@@ -28,7 +28,7 @@
 
 -(void) stopUpdatingData;
 
--(void) addObserver:(id)delegate forDataType:(DataProcessorType)dataType;
+-(void) addObserver:(id)delegate forDataType:(EventDataType)dataType;
 
 -(NSString *) getUnitOfMeasurement;
 
