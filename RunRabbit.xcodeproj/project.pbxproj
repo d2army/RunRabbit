@@ -129,6 +129,7 @@
 		3C26FE1C1BCE10A100F2D5FB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3CBDCC0E1C2CE67700214D0E /* Types */,
 				3CBD14A41BE570BA00B6B5C7 /* Protocols */,
 				3CBD14981BD767C500B6B5C7 /* LocationManager.h */,
 				3CBD14991BD767C500B6B5C7 /* LocationManager.m */,
@@ -142,10 +143,6 @@
 				3C72C2061BF8641800A8BB61 /* ObserverComponent.m */,
 				3C272F251C016497000977D1 /* StateManager.h */,
 				3C272F261C016497000977D1 /* StateManager.m */,
-				3C272F281C028E03000977D1 /* StateTypeDefinition.h */,
-				3C272F291C028E03000977D1 /* StateTypeDefinition.m */,
-				3C272F2B1C028E94000977D1 /* EventDataTypeDefinition.h */,
-				3C272F2C1C028E94000977D1 /* EventDataTypeDefinition.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -196,6 +193,17 @@
 				3C272F301C029F81000977D1 /* State */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		3CBDCC0E1C2CE67700214D0E /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				3C272F281C028E03000977D1 /* StateTypeDefinition.h */,
+				3C272F291C028E03000977D1 /* StateTypeDefinition.m */,
+				3C272F2B1C028E94000977D1 /* EventDataTypeDefinition.h */,
+				3C272F2C1C028E94000977D1 /* EventDataTypeDefinition.m */,
+			);
+			name = Types;
 			sourceTree = "<group>";
 		};
 		3CD7BC551B91762E00648A47 = {

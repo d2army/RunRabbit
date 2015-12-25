@@ -7,6 +7,7 @@
 //
 
 #import "TimerManager.h"
+#import "ObserverComponent.h"
 
 @implementation TimerManager
 @synthesize countdownTimer = _countdownTimer;
@@ -29,14 +30,14 @@
 }
 
 -(void) notifyObserversOfNewEvent:(double)countdownValue {
-    for (id observer in _observers) {
-        [observer updateValue:[NSNumber numberWithDouble:countdownValue]];
+    for (ObserverComponent *observerComponent in _observers) {
+        [observerComponent.delegate updateValue:[NSNumber numberWithDouble:countdownValue] forEventType:TIME_TYPE];
     }
 }
 
 -(void) notifyObserversCompletion {
-    for (id observer in _observers) {
-        [observer completedUpdate];
+    for (ObserverComponent *observerComponent in _observers) {
+        [observerComponent.delegate completedUpdateForEventType:TIME_TYPE];
     }
 }
 

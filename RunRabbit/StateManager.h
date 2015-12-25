@@ -14,8 +14,13 @@
 
 @interface StateManager : NSObject  <StateSourceDelegate,DataTargetDelegate>
 @property (nonatomic) StateType currentState;
-@property (nonatomic,strong) NSMutableArray *observers;
+
+//Observers collects all the state observers
+//it is a map of event types mapped to arrays of listeners
+@property (nonatomic,strong) NSMutableArray *eventMap;
 
 -(void) updateValue:(id)value forEventType:(EventDataType) eventType;
+
+-(void) addObserver:(id)delegate forDataType:(EventDataType)dataType;
 
 @end

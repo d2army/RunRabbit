@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "EventDataTypeDefinition.h"
+#import "DataTargetDelegate.h"
 
 @interface ObserverComponent : NSObject
-@property (nonatomic,strong) id delegate;
+@property (nonatomic,strong) NSObject<DataTargetDelegate> *delegate;
 @property (nonatomic) EventDataType dataType;
 @end

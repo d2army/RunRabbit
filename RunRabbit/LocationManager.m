@@ -59,17 +59,16 @@
 
 -(void) notifyObserversOfNewEvent:(LocationDataPacket *)packet {
     for (ObserverComponent *observerComponent in _observers) {
-        if (observerComponent.dataType == DISTANCE_TYPE) {
-            [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.distanceLeft]];
-        } else {
-            [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.speed]];
-        }
+        [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.distanceLeft] forEventType:DISTANCE_TYPE];
+        [observerComponent.delegate updateValue:[NSNumber numberWithDouble:packet.speed] forEventType:SPEED_TYPE];
     }
 }
 
 -(void) notifyObserversCompletion {
     for (ObserverComponent *observerComponent in _observers) {
-        [observerComponent.delegate completedUpdate];
+        //notify completion for all event types
+        [observerComponent.delegate completedUpdateForEventType:DISTANCE_TYPE];
+        [observerComponent.delegate completedUpdateForEventType:SPEED_TYPE];
     }
 }
 

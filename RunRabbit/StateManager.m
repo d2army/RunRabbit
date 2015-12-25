@@ -11,10 +11,12 @@
 
 @implementation StateManager
 @synthesize currentState = _currentState;
+@synthesize eventMap = _eventMap;
 
 
 - (void) initStateMachine {
     _currentState = NOT_STARTED_STATE;
+    _eventMap = [[NSMutableArray alloc] init];
 }
 
 -(void) updateValue:(id)value forEventType:(EventDataType) eventType {
@@ -23,6 +25,8 @@
     //send out the updates accordingly
     
     switch (eventType) {
+        case TIME_TYPE:
+            
         case TIME_COMPLETED:
             //time over, shut everything down
             
@@ -30,6 +34,13 @@
             
             break;
             
+        case SPEED_TYPE:
+        case SPEED_COMPLETED:
+            break;
+            
+        case DISTANCE_TYPE:
+        case DISTANCE_COMPLETED:
+            break;
         default:
             break;
     }

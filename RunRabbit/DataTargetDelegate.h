@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EventDataTypeDefinition.h"
 
-@protocol DataTargetDelegate
+@protocol DataTargetDelegate <NSObject>
 
 @required
 
