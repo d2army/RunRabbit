@@ -29,6 +29,8 @@
 //Protocol methods to be implemented
 - (void) updateValue:(id)value;
 
+- (void) updateState:(id)state;
+
 - (void) completedUpdate;
 
 @end

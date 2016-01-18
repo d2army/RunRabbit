@@ -13,7 +13,7 @@
 
 @required
 
--(void) updateValue:(id)value forEventType:(EventDataType) eventType;
+-(void) updateValue:(id)value;
 
 /*
  * Inform target updating of data has ended
@@ -21,7 +21,5 @@
 -(void) completedUpdateForEventType:(EventDataType) eventType;
 
 @optional
-
-
 
 @end

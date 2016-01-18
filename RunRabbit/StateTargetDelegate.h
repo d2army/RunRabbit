@@ -9,16 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "StateTypeDefinition.h"
 
-@protocol DataTargetDelegate
+@protocol StateTargetDelegate
 
 @required
 
--(void) updateValue:(id)value forEventType:(EventDataType) eventType;
+/*
+ * Send the most current state to the delegate
+ */
+-(void) updateState:(StateTypeDefinition)state;
+
 
 /*
- * Inform target updating of data has ended
+ * Inform target updating of data has ended for it
  */
--(void) completedUpdateForEventType:(EventDataType) eventType;
+-(void) completedUpdate;
 
 @optional
 

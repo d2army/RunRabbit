@@ -14,9 +14,9 @@
 
 @required
 
--(void) startUpdatingData;
+-(void) startUpdatingState;
 
--(void) stopUpdatingData;
+-(void) stopUpdatingState;
 
 /*
  * Set up initial data
@@ -24,19 +24,9 @@
 -(void) initializeData:(NSDictionary *)dataPacket;
 
 /*
- * Adding an observing delegate and the data type
+ * Adding an observing delegate for the state
  */
--(void) addObserver:(id)delegate forDataType:(EventDataType)dataType;
+-(void) addObserver:(id)delegate;
 
--(double) getMax;
-
--(NSString *) getUnitOfMeasurement;
-
-/* 
- * Show the type title
- */
--(NSString *) getTypeTitle;
-
--(NSString *) getFormatForDisplay;
 
 @end

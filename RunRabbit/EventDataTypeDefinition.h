@@ -20,5 +20,6 @@ enum {
 };
 typedef NSInteger EventDataType;
 
++(void) initializeEventDataTypeMap:(NSMutableDictionary *) map;
 
 @end

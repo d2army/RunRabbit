@@ -41,6 +41,13 @@
     _amountLeftLabel.text = [NSString stringWithFormat:[_dataProcessor getFormatForDisplay],finalValue,[_dataProcessor getUnitOfMeasurement]];
 }
 
+/*
+ * Updating the state of the device
+ */
+- (void) updateState:(id)state {
+    
+}
+
 -(void) completedUpdate {
     _amountLeftLabel.text = @"Completed!";
 }

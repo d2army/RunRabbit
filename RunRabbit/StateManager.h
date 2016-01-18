@@ -17,10 +17,12 @@
 
 //Observers collects all the state observers
 //it is a map of event types mapped to arrays of listeners
-@property (nonatomic,strong) NSMutableArray *eventMap;
+@property (nonatomic,strong) NSMutableDictionary *eventMap;
 
 -(void) updateValue:(id)value forEventType:(EventDataType) eventType;
 
 -(void) addObserver:(id)delegate forDataType:(EventDataType)dataType;
+
+-(void) startUpdatingState;
 
 @end

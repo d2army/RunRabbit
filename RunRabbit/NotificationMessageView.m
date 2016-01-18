@@ -22,6 +22,11 @@
     _notification.text = speedText;
 }
 
+- (void) updateState:(id)state {
+    
+}
+
+
 -(void) completedUpdate {
     _notification.text = @"Completed!";
 }

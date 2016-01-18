@@ -7,7 +7,6 @@
 //
 
 #import "StateManager.h"
-#import "EventDataTypeDefinition.h"
 
 @implementation StateManager
 @synthesize currentState = _currentState;
@@ -16,8 +15,20 @@
 
 - (void) initStateMachine {
     _currentState = NOT_STARTED_STATE;
-    _eventMap = [[NSMutableArray alloc] init];
+    
+    //initialize eventMap properly with the event states
+    [EventDataTypeDefinition initializeEventDataTypeMap:_eventMap];
+    
 }
+
+//called when adding an observer for a specific data type
+-(void) addObserver:(id)delegate forDataType:(EventDataType)dataType {
+    //get the item from the map
+    NSMutableArray *observers = [_eventMap objectForKey:[NSString stringWithFormat: @"%ld", (long)dataType]];
+    
+    [observers addObject:delegate];
+}
+
 
 -(void) updateValue:(id)value forEventType:(EventDataType) eventType {
     
@@ -26,31 +37,49 @@
     
     switch (eventType) {
         case TIME_TYPE:
-            
-        case TIME_COMPLETED:
-            //time over, shut everything down
-            
-            _currentState = COMPLETED_STATE;
-            
-            break;
-            
         case SPEED_TYPE:
-        case SPEED_COMPLETED:
-            break;
+        case DISTANCE_TYPE: {
             
-        case DISTANCE_TYPE:
-        case DISTANCE_COMPLETED:
+            NSMutableArray *observers = [_eventMap objectForKey:[NSString stringWithFormat: @"%ld", (long)eventType]];
+            [self sendDataUpdate:value toObservers:observers];
+            
             break;
+        }
         default:
             break;
     }
     
-    [self executeGivenCurrentState];
+    [self executeGivenCurrentState:(EventDataType) eventType];
     
 }
 
 
--(void) executeGivenCurrentState {
+//Need to send data to appropriate state subscribers
+-(void) sendDataUpdate:(id)value toObservers:(NSMutableArray *)observers {
+    for (id observer in observers) {
+        [observer updateValue:value];
+    }
+}
+
+
+
+//Also need to send state updates to all subscribers
+-(void) sendStateUpdate:(StateType)state {
+    for (id eventType in _eventMap) {
+        NSMutableArray *observers = [_eventMap objectForKey:[NSString stringWithFormat: @"%ld", (long)eventType]];
+        
+        for (id observer in observers) {
+            [observer updateState:state];
+        }
+        
+    }
+}
+
+
+/*
+ * Given the current state, what to do at this time
+ */
+-(void) executeGivenCurrentState:(EventDataType) eventType {
     switch (_currentState) {
         case NOT_STARTED_STATE:
             break;
@@ -65,5 +94,7 @@
     }
     
 }
+
+-(void) startUpdatingState;
 
 @end
